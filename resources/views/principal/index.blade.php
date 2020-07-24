@@ -40,21 +40,27 @@
 						<h2>Bienvenidos a LA ARTESANA</h2>
 						<!--<span>~ Luxury & Quality ~</span>-->
 					</div>
-		    		<div class="row text-center">
+					<div class="row">
 						<div class="col-md-6 col-lg-4">
 							<div class="post">
 								<div class="post-thumb">
 									<a href="blog-single.html">
-										<img src="\images\post-thumb-1.jpg" alt="">
+										<img src="\images\post-thumb-4.jpg" alt="">
 									</a>
+									<div class="post-date">
+										<div class="inner">
+											<span class="date">20</span>
+											<span class="month">June</span>
+										</div>
+									</div>
 								</div>
-								<div class="post-body">
+								<div class="post-body has-border bg-1">
 									<h5>
 										<a href="blog-single.html">
-											Professional level
+											On the other hand
 										</a>
 									</h5>
-									<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur.</p>
+									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
 									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
 								</div>
 							</div>
@@ -63,16 +69,20 @@
 							<div class="post">
 								<div class="post-thumb">
 									<a href="blog-single.html">
-										<img src="\images\post-thumb-2.jpg" alt="">
+										<img src="\images\post-thumb-5.jpg" alt="">
 									</a>
+									<div class="post-date">
+										<div class="inner">
+											<span class="date">16</span>
+											<span class="month">June</span>
+										</div>
+									</div>
 								</div>
-								<div class="post-body">
+								<div class="post-body has-border bg-2">
 									<h5>
-										<a href="blog-single.html">
-											Fresh food guaranteed
-										</a>
+										<a href="blog-single.html">Contrary to popular</a>
 									</h5>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+									<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
 									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
 								</div>
 							</div>
@@ -81,16 +91,22 @@
 							<div class="post mb-0">
 								<div class="post-thumb">
 									<a href="blog-single.html">
-										<img src="\images\post-thumb-3.jpg" alt="">
+										<img src="\images\post-thumb-6.jpg" alt="">
 									</a>
+									<div class="post-date">
+										<div class="inner">
+											<span class="date">10</span>
+											<span class="month">June</span>
+										</div>
+									</div>
 								</div>
-								<div class="post-body pb-0">
+								<div class="post-body has-border bg-3">
 									<h5>
 										<a href="blog-single.html">
-											The menu is plentiful
+											This book is a treatise
 										</a>
 									</h5>
-									<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
 									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
 								</div>
 							</div>
@@ -342,7 +358,7 @@
 		    </section>
 
 		    <!-- FEATURE -->
-		    <section class="section-primary pt-150 pb-120 feature">
+		    <!--<section class="section-primary pt-150 pb-120 feature">
     			<div class="container">
 					<div class="row">
 						<div class="col-md-6">
@@ -367,7 +383,7 @@
 										<i class="zmdi zmdi-star"></i>
 										<i class="zmdi zmdi-star"></i>
 									</div>
-									<!-- OWL-CAROUSEL -->
+									<!-- OWL-CAROUSEL 
 									<div class="feature-slider">
 										<div class="owl-carousel owl-theme style" id="feature-carousel">
 										    <div class="item">
@@ -431,7 +447,7 @@
 												</div>
 										    </div>
 										</div>
-										<!-- NAVIGATION BUTTON -->
+										<!-- NAVIGATION BUTTON 
 									    <span class="lnr lnr-chevron-left" id="feature-prev"></span>
 									    <span class="lnr lnr-chevron-right" id="feature-next"></span>
 									</div>
@@ -440,7 +456,7 @@
 						</div>
 					</div>		
     			</div>
-		    </section>
+		    </section>-->
 
 		    <!-- BOOK A TABLE -->
 		   <!-- <section class="booking">

@@ -88,8 +88,11 @@
 			</section>
 
 			<!-- MAP -->
-			<div class="js-google-map" data-makericon="/images/map-marker.png" data-makers='[["Royate", "Now that you visited our website,<br> how about checking out our office too?", 40.715681, -74.003427]]'>
-				<div class="map__holder js-map-holder map-holder" id="map"></div>
+			<!--<div class="js-google-map" data-makericon="/images/map-marker.png" data-makers='[["Royate", "Now that you visited our website,<br> how about checking out our office too?", 40.715681, -74.003427]]'>
+				<!--<div class="map__holder js-map-holder map-holder" id="map"></div>-->
+                <div>
+                <iframe frameborder="0" style="border:0" width="100%" height="800px" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDEdsq6YzeLi6-XTHgI5c5hTkN9C68ZCrc&q=place_id:ChIJV6DSkdmELIQRIL2TDZmP5I4" allowfullscreen=""></iframe>
+                
 			</div>
 		</main>
 

@@ -64,7 +64,8 @@
 					</a>
 				</div>
 				<ul>
-					<li class="current has-children">
+					<!--<li class="current has-children">-->
+                    <li>
 						<a href="/">
 							Inicio
 						</a>
