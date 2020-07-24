@@ -44,7 +44,7 @@
 						<div class="col-md-6 col-lg-4">
 							<div class="post">
 								<div class="post-thumb">
-									<a href="blog-single.html">
+									<a href="/info_platillo">
 										<img src="\images\post-thumb-4.jpg" alt="">
 									</a>
 									<div class="post-date">
@@ -56,19 +56,19 @@
 								</div>
 								<div class="post-body has-border bg-1">
 									<h5>
-										<a href="blog-single.html">
+										<a href="/info_platillo">
 											On the other hand
 										</a>
 									</h5>
 									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
-									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
+									
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6 col-lg-4">
 							<div class="post">
 								<div class="post-thumb">
-									<a href="blog-single.html">
+									<a href="/info_platillo">
 										<img src="\images\post-thumb-5.jpg" alt="">
 									</a>
 									<div class="post-date">
@@ -80,17 +80,17 @@
 								</div>
 								<div class="post-body has-border bg-2">
 									<h5>
-										<a href="blog-single.html">Contrary to popular</a>
+										<a href="/info_platillo">Contrary to popular</a>
 									</h5>
 									<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
-									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
+									
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6 col-lg-4">
 							<div class="post mb-0">
 								<div class="post-thumb">
-									<a href="blog-single.html">
+									<a href="/info_platillo">
 										<img src="\images\post-thumb-6.jpg" alt="">
 									</a>
 									<div class="post-date">
@@ -102,12 +102,12 @@
 								</div>
 								<div class="post-body has-border bg-3">
 									<h5>
-										<a href="blog-single.html">
+										<a href="/info_platillo">
 											This book is a treatise
 										</a>
 									</h5>
 									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
-									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
+									
 								</div>
 							</div>
 						</div>
@@ -546,7 +546,7 @@
 						<div class="col-md-6 col-lg-4">
 							<div class="post">
 								<div class="post-thumb">
-									<a href="blog-single.html">
+									<a href="/info_platillo">
 										<img src="\images\post-thumb-4.jpg" alt="">
 									</a>
 									<div class="post-date">
@@ -558,19 +558,19 @@
 								</div>
 								<div class="post-body has-border bg-1">
 									<h5>
-										<a href="blog-single.html">
+										<a href="/info_platillo">
 											On the other hand
 										</a>
 									</h5>
 									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
-									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
+									
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6 col-lg-4">
 							<div class="post">
 								<div class="post-thumb">
-									<a href="blog-single.html">
+									<a href="/info_platillo">
 										<img src="\images\post-thumb-5.jpg" alt="">
 									</a>
 									<div class="post-date">
@@ -582,17 +582,17 @@
 								</div>
 								<div class="post-body has-border bg-2">
 									<h5>
-										<a href="blog-single.html">Contrary to popular</a>
+										<a href="/info_platillo">Contrary to popular</a>
 									</h5>
 									<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
-									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
+									
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6 col-lg-4">
 							<div class="post mb-0">
 								<div class="post-thumb">
-									<a href="blog-single.html">
+									<a href="/info_platillo">
 										<img src="\images\post-thumb-6.jpg" alt="">
 									</a>
 									<div class="post-date">
@@ -604,12 +604,12 @@
 								</div>
 								<div class="post-body has-border bg-3">
 									<h5>
-										<a href="blog-single.html">
+										<a href="/info_platillo">
 											This book is a treatise
 										</a>
 									</h5>
 									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
-									<a href="blog-single.html" class="au-btn__readmore">Read More</a>
+									
 								</div>
 							</div>
 						</div>
