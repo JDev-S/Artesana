@@ -5,7 +5,7 @@
 			<!-- PAGE INFO -->
 			<section class="page-info set-bg" data-image-src="images/page-info-bg-5.jpg">
 				<div class="section-header">
-					<h1 class="text-white">Lista de comida</h1>
+					<h1 class="text-white">Lista de platillos</h1>
 					<span>~ Deliciosa comida ~</span>
 				</div>
 			</section>

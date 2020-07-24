@@ -6,15 +6,15 @@
 				<div class="container">
 					<div class="row justify-content-between align-content-center">
 						<div class="col-md-auto">
-							<h3>Cart</h3>
+							<h3>Carrito de compras</h3>
 						</div>
 						<div class="col-md-auto">
 							<ul class="au-breadcrumb">
 								<li>
-									<a href="index.html">Home</a>
+									<a href="/">Inicio</a>
 								</li>
 								<li>
-									<a href="shop-cart.html">Cart</a>
+									<a href="/tienda">Seguir comprando</a>
 								</li>
 							</ul>
 						</div>

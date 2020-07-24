@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Home Page v1</title>
+		<title>LA ARTESANA</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<!-- LINEARICONS -->
@@ -22,7 +22,7 @@
 	    <link rel="stylesheet" href="\css\animate.css">
 
 	    <!-- DATE-PICKER -->
-		<link rel="stylesheet" href="vendor\date-picker\datepicker.min.css">
+		<link rel="stylesheet" href="\vendor\date-picker\datepicker.min.css">
 		
 	    <!-- SLIDER REVOLUTION -->
         <link rel="stylesheet" type="text/css" href="\vendor\revolution-slider\css\layers.css">
@@ -39,7 +39,7 @@
         <link rel="shortcut icon" href="favicon.png">
 
 	    <!-- STYLE CSS -->
-	    <link rel="stylesheet" href="css\style.css">
+	    <link rel="stylesheet" href="\css\style.css">
 	</head>
 	
 	<body class="preload">
@@ -59,8 +59,8 @@
 			<!-- HEADER ON DESKTOP -->
 			<nav class="navbar-desktop">
 				<div class="left">
-					<a href="index.html" class="logo">
-						<img src="\images\logo.png" alt="Royate">
+					<a href="/" class="logo">
+						<img src="\images\logo.png" alt="LA ARTESANA">
 					</a>
 				</div>
 				<ul>
@@ -290,7 +290,7 @@
 					<div class="action">
 						<div class="notify">
 							<img src="images\notify.png" alt="">
-							<span class="notify-amount">0</span>
+							<span class="notify-amount">4</span>
 							
 							<!-- WIDGET SHOPPING -->
 							<div id="woocommerce_widget_cart-2" class="widget woocommerce widget_shopping_cart">
@@ -641,15 +641,15 @@
 				<div class="close-btn">
 					<span class="lnr lnr-cross" id="close-icon"></span>
 				</div>
-				<a href="index.html" class="logo">
+				<a href="/" class="logo">
 					<img src="images\logo-menu-sidebar.png" alt="">
 				</a>
-				<p class="text">Et harum quidem rerum facilis est et expedita distinctio nam libero.</p>
+				<p class="text">Panaderia con excelente producto con ingredientes de primera calidad. Empresa 100 % Mexicana que abre sus puertas en Salamanca, Gto.</p>
 				<!-- SLIDER -->
 				<div class="owl-carousel owl-theme image-slider style-1" id="image-carousel">
 				    <div class="item">
 				    	<a href="#">
-				    		<img src='images\menu-sidebar-slide-1.jpg' alt="">
+				    		<img src='\images\menu-sidebar-slide-1.jpg' alt="">
 				    	</a>
 				    </div>
 				    <div class="item">
@@ -667,18 +667,18 @@
 				<div class="contact-part">
 					<div class="contact-line">
 						<span class="lnr lnr-home"></span>
-						<span>No 40 Baria Sreet 133/2</span>
+						<span>Naranjos 220, Bellavista, Salamanca, Gto</span>
 					</div>
 					<div class="contact-line">
 						<a href="tel:+15618003666666">
 							<span class="lnr lnr-phone-handset"></span>
-							<span> + (156) 1800-366-6666</span>
+							<span>464 126 9311</span>
 						</a>
 					</div>
 					<div class="contact-line">
 						<a href="#">
 							<span class="lnr lnr-envelope"></span>
-							<span> <span class="__cf_email__" data-cfemail="83c6f1eae0aebbb1c3e6fbe2eef3efe6ade0ecee">[email&#160;protected]</span></span>
+							<span> <span class="__cf_email__" data-cfemail="83c6f1eae0aebbb1c3e6fbe2eef3efe6ade0ecee">laartesana@gmail.com</span></span>
 						</a>
 					</div>
 				</div>
