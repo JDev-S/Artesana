@@ -179,7 +179,7 @@
 						</div>
 					</li>-->
                     <li>
-						<a href="menu.html">
+						<a href="/tienda">
 							Tienda
 						</a>
 					</li>
@@ -340,13 +340,13 @@
 										</span>
 									</p>
 									<p class="woocommerce-mini-cart__buttons buttons">
-										<a href="#" class="button wc-forward view-cart">View cart</a>
-										<a href="#" class="button checkout wc-forward">Checkout</a>
+										<a href="/carrito_compras" class="button wc-forward view-cart">Ver carrito</a>
+										<a href="/pagar" class="button checkout wc-forward">Ir a pagar</a>
 									</p>
 								</div>
 							</div>
 						</div>	
-						<span class="lnr lnr-magnifier search-icon" data-toggle="modal" data-target="#modalSearch"></span>
+						<!--<span class="lnr lnr-magnifier search-icon" data-toggle="modal" data-target="#modalSearch"></span>-->
 						<span class="lnr lnr-menu menu-sidebar-icon"></span>
 					</div>
 				</div>
@@ -484,7 +484,7 @@
 							</ul>-->
 						</li>
 						<li>
-							<a href="#">
+							<a href="/tienda">
 								Tienda
 							</a>
 							<!--<ul>

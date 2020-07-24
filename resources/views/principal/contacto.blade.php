@@ -68,7 +68,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="contact-us-form">
-								<form   method="POST" action={{route('contact')}}>
+								<form method="POST" action={{route('contact')}}>
                                     {{ csrf_field() }}
 									<div class="form-holder">
 										<input type="text" class="form-control" placeholder="Nombre completo" name="nombre" required="">
