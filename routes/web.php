@@ -43,3 +43,35 @@ Route::get('/carrito_compras', function () {
 Route::get('/pagar', function () {
     return view('/principal/pagar');
 });
+
+
+Route::get('/prueba', function () {
+    return view('/principal/prueba');
+});
+
+/*APARTADO PARA EL ADMINISTRADOR*/
+/*INICIO PARA LA VENTANA DEL ADMINISTRADOR*/
+Route::get('/Admin_restaurante', function () {
+    return view('/Administrador/index');
+});
+
+/*ADMINISTRADOR ALIMENTOS*/
+
+/*ADMINISTRADOR CATEGORIA*/
+
+Route::get('/admin_categoria','CategoriaController@categorias_mostrar');
+Route::post('/Admin_categoria_borrar','CategoriaController@eliminar');
+Route::post('/Admin_categoria_nuevo','CategoriaController@insertar');
+Route::post('/Admin_categoria_editar','CategoriaController@actualizar');
+
+/*ADMINISTRADOR HORARIO*/
+Route::get('/admin_horario','HorarioController@horario_mostrar');
+Route::post('/admin_horario_editar','HorarioController@actualizar');
+
+/*ADMINISTRADOR METODO DE PAGO*/
+Route::get('/admin_metodo_de_pago','Metodo_de_pagoController@metodo_pago_mostrar');
+Route::post('/admin_metodo_de_pago_eliminar','Metodo_de_pagoController@eliminar');
+Route::post('/Admin_metodo_de_pago_insertar','Metodo_de_pagoController@insertar');
+Route::post('/Admin_metodo_de_pago_actualizar','Metodo_de_pagoController@actualizar');
+
+/*ADMINISTRADOR PRODUCTO*/

@@ -2352,6 +2352,11 @@ body.center {
   background: url("../images/our-service-bg.jpg") center center;
   background-size: cover; }
 
+
+.our-service2 {
+  background-color: black center center;
+  background-size: cover; }
+
 .our-service-col {
   color: #fff;
   text-align: center;

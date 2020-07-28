@@ -4,361 +4,189 @@
 
 <main>
 
-			<!-- SLIDE SHOW -->
-			<div class="rev_slider_wrapper">
-		        <div id="rev_slider_1" class="rev_slider" data-version="5.4.5">
-		            <ul> 
-		                <li data-transition="">
-		                    <img src="\images\slideshow-1.jpg" class="rev-slidebg" alt="">
+    <!-- SLIDE SHOW -->
+    <div class="rev_slider_wrapper">
+        <div id="rev_slider_1" class="rev_slider" data-version="5.4.5">
+            <ul>
+                <li data-transition="">
+                    <img src="\images\slideshow-1.jpg" class="rev-slidebg" alt="">
 
-		                    <!--<div class="tp-caption tp-resizeme caption-1" data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]' data-x="center" data-y="middle" data-fontsize="['72', '70', '65', '60', '60']" data-voffset="['-43.5','-57', '-54', '-97', '-100']" data-textalign="center" data-lineheight="inherit" data-color="#cdaa7c">
+                    <!--<div class="tp-caption tp-resizeme caption-1" data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]' data-x="center" data-y="middle" data-fontsize="['72', '70', '65', '60', '60']" data-voffset="['-43.5','-57', '-54', '-97', '-100']" data-textalign="center" data-lineheight="inherit" data-color="#cdaa7c">
 					        	Experience the food
 							</div>-->
-				
-							<!--<div class="tp-caption tp-resizeme caption-2" data-frames='[{"delay":1000,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]' data-x="center" data-y="middle" data-voffset="['47.5', '34', '37', '-6', '-9']" data-fontsize="['20', '20', '20', '20', '25']" data-lineheight="inherit" data-color="#ccc">
+
+                    <!--<div class="tp-caption tp-resizeme caption-2" data-frames='[{"delay":1000,"speed":1000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:-20px;opacity:0;","ease":"Power3.easeInOut"}]' data-x="center" data-y="middle" data-voffset="['47.5', '34', '37', '-6', '-9']" data-fontsize="['20', '20', '20', '20', '25']" data-lineheight="inherit" data-color="#ccc">
 								Wish you have good food at our restaurant
 							</div>-->
-				
-							<!--<a href="reservation_v1.html" class="tp-caption tp-resizeme caption-btn au-btn round au-btn--hover" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:20px;opacity:0;","ease":"Power3.easeInOut"}]' data-x="center" data-y="middle" data-voffset="['146.5', '133', '136', '93', '90']" data-fontsize="['15', '18', '19',  '20', '25']" data-lineheight="inherit" data-width="['172', '182', '190', '200', '252']" data-height="['42', '42', '50', '50', '65']" data-paddingtop="1" data-color="#fff">
+
+                    <!--<a href="reservation_v1.html" class="tp-caption tp-resizeme caption-btn au-btn round au-btn--hover" data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":500,"frame":"999","to":"y:20px;opacity:0;","ease":"Power3.easeInOut"}]' data-x="center" data-y="middle" data-voffset="['146.5', '133', '136', '93', '90']" data-fontsize="['15', '18', '19',  '20', '25']" data-lineheight="inherit" data-width="['172', '182', '190', '200', '252']" data-height="['42', '42', '50', '50', '65']" data-paddingtop="1" data-color="#fff">
 								Booking now
 							</a>-->
 
-		                    <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute" data-videowidth="100%" data-videoheight="100%" data-ytid="CoAvaYOwm6k" data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&
-     						origin=http://www.youtube.com/" data-videopreload="auto" data-videorate="1" data-forcecover="1" data-videoloop="loopandnoslidestop" data-aspectratio="16:9" data-videostartat="00:00" data-autoplay="on" data-autoplayonlyfirsttime="true">	
-							</div>
-                            <!--<iframe width="100%" height="100%" src="https://www.youtube.com/embed/8SbUC-UaAxE" frameborder="0" allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                    <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute" data-videowidth="100%" data-videoheight="100%" data-ytid="CoAvaYOwm6k" data-videoattributes="version=3&enablejsapi=1&html5=1&hd=1&wmode=opaque&showinfo=0&rel=0&
+     						origin=http://www.youtube.com/" data-videopreload="auto" data-videorate="1" data-forcecover="1" data-videoloop="loopandnoslidestop" data-aspectratio="16:9" data-videostartat="00:00" data-autoplay="on" data-autoplayonlyfirsttime="true">
+                    </div>
+                    <!--<iframe width="100%" height="100%" src="https://www.youtube.com/embed/8SbUC-UaAxE" frameborder="0" allow="accelerometer; autoplay=1; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
 
-		                </li>
-		            </ul>
-		        </div>
-		    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-		    <!-- WELCOME TO ROYATE -->
-		    <section class="welcome section-primary">
-		    	<div class="container">
-					<div class="section-header">
-						<h2>Bienvenidos a LA ARTESANA</h2>
-						<!--<span>~ Luxury & Quality ~</span>-->
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-lg-4">
-							<div class="post">
-								<div class="post-thumb">
-									<a href="/info_platillo">
-										<img src="\images\post-thumb-4.jpg" alt="">
-									</a>
-									<div class="post-date">
-										<div class="inner">
-											<span class="date">20</span>
-											<span class="month">June</span>
-										</div>
-									</div>
-								</div>
-								<div class="post-body has-border bg-1">
-									<h5>
-										<a href="/info_platillo">
-											On the other hand
-										</a>
-									</h5>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
-									
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="post">
-								<div class="post-thumb">
-									<a href="/info_platillo">
-										<img src="\images\post-thumb-5.jpg" alt="">
-									</a>
-									<div class="post-date">
-										<div class="inner">
-											<span class="date">16</span>
-											<span class="month">June</span>
-										</div>
-									</div>
-								</div>
-								<div class="post-body has-border bg-2">
-									<h5>
-										<a href="/info_platillo">Contrary to popular</a>
-									</h5>
-									<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
-									
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="post mb-0">
-								<div class="post-thumb">
-									<a href="/info_platillo">
-										<img src="\images\post-thumb-6.jpg" alt="">
-									</a>
-									<div class="post-date">
-										<div class="inner">
-											<span class="date">10</span>
-											<span class="month">June</span>
-										</div>
-									</div>
-								</div>
-								<div class="post-body has-border bg-3">
-									<h5>
-										<a href="/info_platillo">
-											This book is a treatise
-										</a>
-									</h5>
-									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
-									
-								</div>
-							</div>
-						</div>
-					</div>			
-		    	</div>
-		    </section>
-			
-			<!-- OUR MENU -->
-		    <section class="our-menu section-primary pb-113">
-		    	<div class="container">
-	    			<div class="section-header">
-						<h2 class="text-white">Our food menu</h2>
-						<span>~ See what we offer ~</span>
-					</div>			
-					<div class="row justify-content-between">
-						<div class="col-md-6">
-							<div class="our-menu-col left">
-								<div class="heading">
-									<h3>Main Course</h3>
-									<span class="icon">
-										<img src="\images\main-course.png" alt="">
-									</span>
-								</div>
-								<div class="body">
-									<div class="menu-item">
-										<h5>
-											<a href="shop-single.html">Super-Delicious Zuppa Toscana</a>
-											<span class="dots"></span>
-											<span class="price">
-												<span class="currency-symbol">$</span>
-												<span class="number">40</span>
-											</span>
-										</h5>
-										<ul>
-											<li>
-												<a href="#">Chicken</a>
-											</li>
-											<li>
-												<a href="#">Italian</a>
-											</li>
-											<li>
-												<a href="#">Sausage</a>
-											</li>
-											<li>
-												<a href="#">Spinach</a>
-											</li>
-										</ul>
-									</div>
-									<div class="menu-item">
-										<h5>
-											<a href="shop-single.html">Bacon coil baked Australian beef</a>
-											<span class="dots"></span>
-											<span class="price">
-												<span>$</span>26
-											</span>
-										</h5>
-										<ul>
-											<li>
-												<a href="#">Mushrooms</a>
-											</li>
-											<li>
-												<a href="#">Chicken</a>
-											</li>
-											<li>
-												<a href="#">Broth Arborio</a>
-											</li>
-											<li>
-												<a href="#">Rice</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="our-menu-col right">
-								<div class="heading">
-									<h3>Soups & Salads</h3>
-									<span class="icon mt-12">
-										<img src="\images\soups-and-salads.png" alt="">
-									</span>
-								</div>
-								<div class="body">
-									<div class="menu-item">
-										<h5>
-											<a href="shop-single.html">Salat banana flower</a>
-											<span class="dots"></span>
-											<span class="price">
-												<span>$</span>
-												40
-											</span>
-										</h5>
-										<ul>
-											<li>
-												<a href="#">Italian</a>
-											</li>
-											<li>
-												<a href="#">Sausage</a>
-											</li>
-											<li>
-												<a href="#">Spinach</a>
-											</li>
-										</ul>
-									</div>
-									<div class="menu-item">
-										<h5>
-											<a href="shop-single.html">Gourmet Mushroom Risotto</a>
-											<span class="dots"></span>
-											<span class="price">
-												<span>$</span>26
-											</span>
-										</h5>
-										<ul>
-											<li>
-												<a href="#">Mushrooms</a>
-											</li>
-											<li>
-												<a href="#">Chicken</a>
-											</li>
-											<li>
-												<a href="#">Broth Arborio</a>
-											</li>
-											<li>
-												<a href="#">Rice</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="our-menu-col mb-md-0 left">
-								<div class="heading">
-									<h3>Drinks</h3>
-									<span class="icon mt-4px">
-										<img src="\images\drinks.png" alt="">
-									</span>
-								</div>
-								<div class="body">
-									<div class="menu-item">
-										<h5>
-											<a href="shop-single.html">Ice cream tarte apple</a>
-											<span class="dots"></span>
-											<span class="price">
-												<span>$</span>
-												40
-											</span>
-										</h5>
-										<ul>
-											<li>
-												<a href="#">Mushrooms</a>
-											</li>
-											<li>
-												<a href="#">Chicken</a>
-											</li>
-											<li>
-												<a href="#">Broth Arborio</a>
-											</li>
-											<li>
-												<a href="#">Rice</a>
-											</li>
-										</ul>
-									</div>
-									<div class="menu-item">
-										<h5>
-											<a href="shop-single.html">Fruit 'Mille feuille'</a>
-											<span class="dots"></span>
-											<span class="price">
-												<span>$</span>26
-											</span>
-										</h5>
-										<ul>
-											<li>
-												<a href="#">Mushrooms</a>
-											</li>
-											<li>
-												<a href="#">Broth Arborio</a>
-											</li>
-											<li>
-												<a href="#">Rice</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="our-menu-col mb-0 right">
-								<div class="heading">
-									<h3>Desserts</h3>
-									<span class="icon">
-										<img src="\images\desserts.png" alt="">
-									</span>
-								</div>
-								<div class="body">
-									<div class="menu-item">
-										<h5>
-											<a href="shop-single.html">Double Chocolate Mud Pie</a>
-											<span class="dots"></span>
-											<span class="price">
-												<span>$</span>
-												40
-											</span>
-										</h5>
-										<ul>
-											<li>
-												<a href="#">Chicken</a>
-											</li>
-											<li>
-												<a href="#">Italian</a>
-											</li>
-											<li>
-												<a href="#">Sausage</a>
-											</li>
-											<li>
-												<a href="#">Spinach</a>
-											</li>
-										</ul>
-									</div>
-									<div class="menu-item">
-										<h5>
-											<a href="shop-single.html">Pannacotta cream cake</a>
-											<span class="dots"></span>
-											<span class="price">
-												<span>$</span>26
-											</span>
-										</h5>
-										<ul>
-											<li>
-												<a href="#">Mushrooms</a>
-											</li>
-											<li>
-												<a href="#">Chicken</a>
-											</li>
-											<li>
-												<a href="#">Broth Arborio</a>
-											</li>
-											<li>
-												<a href="#">Rice</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-		    	</div>
-		    </section>
+    <!-- WELCOME TO ROYATE -->
+    <section class="welcome section-primary">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bienvenidos a LA ARTESANA</h2>
+                <!--<span>~ Luxury & Quality ~</span>-->
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="post">
+                        <div class="post-thumb">
+                            <a href="/info_platillo">
+                                <img src="\images\post-thumb-4.jpg" alt="">
+                            </a>
+                            <div class="post-date">
+                                <div class="inner">
+                                    <span class="date">20</span>
+                                    <span class="month">June</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-body has-border bg-1">
+                            <h5>
+                                <a href="/info_platillo">
+                                    On the other hand
+                                </a>
+                            </h5>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
 
-		    <!-- FEATURE -->
-		    <!--<section class="section-primary pt-150 pb-120 feature">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="post">
+                        <div class="post-thumb">
+                            <a href="/info_platillo">
+                                <img src="\images\post-thumb-5.jpg" alt="">
+                            </a>
+                            <div class="post-date">
+                                <div class="inner">
+                                    <span class="date">16</span>
+                                    <span class="month">June</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-body has-border bg-2">
+                            <h5>
+                                <a href="/info_platillo">Contrary to popular</a>
+                            </h5>
+                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="post mb-0">
+                        <div class="post-thumb">
+                            <a href="/info_platillo">
+                                <img src="\images\post-thumb-6.jpg" alt="">
+                            </a>
+                            <div class="post-date">
+                                <div class="inner">
+                                    <span class="date">10</span>
+                                    <span class="month">June</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-body has-border bg-3">
+                            <h5>
+                                <a href="/info_platillo">
+                                    This book is a treatise
+                                </a>
+                            </h5>
+                            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR MENU -->
+    <section class="our-menu section-primary pb-113">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="text-white">Menu la Artesana</h2>
+                <span>~ Observe lo que nosotros ofrecemos ~</span>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-md-6">
+                    <div class="our-menu-col left">
+                        <div class="heading">
+                            <h3>Escanea el QR</h3>
+                        </div>
+                        <img src="/images/qr.jpeg" width="450px" height="450px">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="our-menu-col right">
+                        <div class="heading" style="margin-bottom: 0px;">
+                            <h3>Menu en fisico</h3>
+                        </div>
+
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="/images/1.jpg" width="500px" height="500" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/2.jpg" width="500px" height="500" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/3.jpg" width="500px" height="500" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/4.jpg" width="500px" height="500" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/5.jpg" width="500px" height="500" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/6.jpg" width="500px" height="500" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/7.jpg" width="500px" height="500" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/8.jpg" width="500px" height="500" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/9.jpg" width="500px" height="500" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="/images/10.jpg" width="500px" height="500" alt="Third slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FEATURE -->
+    <!--<section class="section-primary pt-150 pb-120 feature">
     			<div class="container">
 					<div class="row">
 						<div class="col-md-6">
@@ -458,8 +286,8 @@
     			</div>
 		    </section>-->
 
-		    <!-- BOOK A TABLE -->
-		   <!-- <section class="booking">
+    <!-- BOOK A TABLE -->
+    <!-- <section class="booking">
 		    	<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-6 px-0">
@@ -535,89 +363,89 @@
 		    	</div>
 		    </section>-->
 
-		    <!-- LATEST NEWS -->
-		    <section class="section-primary pb-120">
-		    	<div class="container">
-	    			<div class="section-header">
-						<h2>Nuevos platillos</h2>
-						<!--<span>~ Great articles ~</span>-->
-					</div>	
-					<div class="row">
-						<div class="col-md-6 col-lg-4">
-							<div class="post">
-								<div class="post-thumb">
-									<a href="/info_platillo">
-										<img src="\images\post-thumb-4.jpg" alt="">
-									</a>
-									<div class="post-date">
-										<div class="inner">
-											<span class="date">20</span>
-											<span class="month">June</span>
-										</div>
-									</div>
-								</div>
-								<div class="post-body has-border bg-1">
-									<h5>
-										<a href="/info_platillo">
-											On the other hand
-										</a>
-									</h5>
-									<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
-									
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="post">
-								<div class="post-thumb">
-									<a href="/info_platillo">
-										<img src="\images\post-thumb-5.jpg" alt="">
-									</a>
-									<div class="post-date">
-										<div class="inner">
-											<span class="date">16</span>
-											<span class="month">June</span>
-										</div>
-									</div>
-								</div>
-								<div class="post-body has-border bg-2">
-									<h5>
-										<a href="/info_platillo">Contrary to popular</a>
-									</h5>
-									<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
-									
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="post mb-0">
-								<div class="post-thumb">
-									<a href="/info_platillo">
-										<img src="\images\post-thumb-6.jpg" alt="">
-									</a>
-									<div class="post-date">
-										<div class="inner">
-											<span class="date">10</span>
-											<span class="month">June</span>
-										</div>
-									</div>
-								</div>
-								<div class="post-body has-border bg-3">
-									<h5>
-										<a href="/info_platillo">
-											This book is a treatise
-										</a>
-									</h5>
-									<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
-									
-								</div>
-							</div>
-						</div>
-					</div>		
-		    	</div>
-		    </section>
-			
-		</main>
-        
+    <!-- LATEST NEWS -->
+    <section class="section-primary pb-120">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuevos platillos</h2>
+                <!--<span>~ Great articles ~</span>-->
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="post">
+                        <div class="post-thumb">
+                            <a href="/info_platillo">
+                                <img src="\images\post-thumb-4.jpg" alt="">
+                            </a>
+                            <div class="post-date">
+                                <div class="inner">
+                                    <span class="date">20</span>
+                                    <span class="month">June</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-body has-border bg-1">
+                            <h5>
+                                <a href="/info_platillo">
+                                    On the other hand
+                                </a>
+                            </h5>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="post">
+                        <div class="post-thumb">
+                            <a href="/info_platillo">
+                                <img src="\images\post-thumb-5.jpg" alt="">
+                            </a>
+                            <div class="post-date">
+                                <div class="inner">
+                                    <span class="date">16</span>
+                                    <span class="month">June</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-body has-border bg-2">
+                            <h5>
+                                <a href="/info_platillo">Contrary to popular</a>
+                            </h5>
+                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="post mb-0">
+                        <div class="post-thumb">
+                            <a href="/info_platillo">
+                                <img src="\images\post-thumb-6.jpg" alt="">
+                            </a>
+                            <div class="post-date">
+                                <div class="inner">
+                                    <span class="date">10</span>
+                                    <span class="month">June</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-body has-border bg-3">
+                            <h5>
+                                <a href="/info_platillo">
+                                    This book is a treatise
+                                </a>
+                            </h5>
+                            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
 
 @stop
