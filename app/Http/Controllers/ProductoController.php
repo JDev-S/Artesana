@@ -45,7 +45,21 @@ class ProductoController extends Controller
         $nombre = $input['nombre'];
         $descripcion=$input['descripcion'];
         
-        $query=DB::update("update producto set nombre='$nombre', descripcion='$descripcion' , imagen_producto='$descripcion' where id_producto=?",[$id_producto]);
+        if($input->hasFile('fotografia_miniatura'))
+         {
+             $file=$input->file('fotografia_miniatura');
+             $name=time().'_'.$nombre;
+             $file->move(public_path().'/images/',$name);
+             $foto="/images/".$name;
+        
+        $query=DB::update("update producto set nombre='$nombre', descripcion='$descripcion' , imagen_producto='$foto' where id_producto=?",[$id_producto]);
         return redirect()->action('ProductoController@productos_mostrar')->withInput();
+            
+        }
+        else
+        {
+                    $query=DB::update("update producto set nombre='$nombre', descripcion='$descripcion' where id_producto=?",[$id_producto]);
+                    return redirect()->action('ProductoController@productos_mostrar')->withInput();
+        }
 	}
 }

@@ -68,9 +68,9 @@
                 <a href="/Admin_alimentos" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="product"> <span><i class="fa fa-archive fs-16"></i>Alimentos </span>
                 </a>
                 <ul id="product" class="collapse" aria-labelledby="product" data-parent="#side-nav-accordion">
-                    <li> <a href="/Admin_alimentos">Listado de alimentos</a>
+                    <li> <a href="/admin_alimentos">Listado de alimentos</a>
                     </li>
-                    <li> <a href="/Admin_ingresar_alimentos">Agregar alimentos</a>
+                    <li> <a href="/agregar_alimento">Agregar alimentos</a>
                     </li>
                 </ul>
             </li>

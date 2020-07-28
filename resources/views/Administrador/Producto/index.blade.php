@@ -42,12 +42,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                {{ Form::open(array('action' => 'CategoriaController@eliminar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
+                {{ Form::open(array('action' => 'ProductoController@eliminar', 'method' => 'post','id'=>'student-settings','name'=>'loginform')) }}
                 <div class="form-group">
                     <label for="recipient-name" class="col-form-label">¿Seguro que desea eliminar el registro?</label>
                 </div>
                 <div class="modal-footer">
-                    {{ Form::hidden('id_categoria') }}
+                    {{ Form::hidden('id_producto') }}
                     {!! Form::submit( 'Si', ['class' => 'btn btn-danger', 'name' => 'submitbutton', 'value' => 'login'])!!}
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                 </div>
@@ -70,10 +70,24 @@
             </div>
             <div class="modal-body">
 
-                {{ Form::open(array('action' => 'CategoriaController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform','enctype'=>'multipart/form-data')) }}
+                {{ Form::open(array('action' => 'ProductoController@insertar', 'method' => 'post','id'=>'student-settings','name'=>'loginform','enctype'=>'multipart/form-data')) }}
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Descripcion:</label>
-                    {{ Form::text('nombre_categoria', '', array('id' => 'nombre_categoria',  'placeholder' => 'Escribe una categoria','required' => 'required')) }}
+                    <label for="recipient-name" class="col-form-label">Nombre:</label>
+                    {{ Form::text('nombre', '', array('id' => 'nombre',  'placeholder' => 'Escribe el nombre del producto','required' => 'required')) }}
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Descripción:</label>
+                    {{ Form::textarea('descripcion', '', array('id' => 'descripcion',  'placeholder' => 'Escribe la descripción','required' => 'required')) }}
+                </div>
+
+                <div class="modal-body">
+                    <label for="validationCustom12">Imagen del producto</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="fotografia_miniatura" name="fotografia_miniatura">
+                        <label class="custom-file-label">Elige la imagen</label>
+
+                    </div>
                 </div>
 
                 <div class="modal-footer">
@@ -99,13 +113,29 @@
                 </button>
             </div>
             <div class="modal-body">
-                {{ Form::open(array('action' => 'CategoriaController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform','enctype'=>'multipart/form-data')) }}
+                {{ Form::open(array('action' => 'ProductoController@actualizar', 'method' => 'post','id'=>'student-settings','name'=>'loginform','enctype'=>'multipart/form-data')) }}
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Marca:</label>
-                    {{ Form::text('nombre_categoria', '', array('id' => 'nombre_categoria','class'=>'form-control',  'placeholder' => 'Escribe una categoria ','required' => 'required')) }}
-                    {{ Form::hidden('id_categoria', '', array('id' => 'id_categoria',  'placeholder' => 'Id')) }}
-                    {{ Form::hidden('eliminado', '', array('id' => 'eliminado',  'placeholder' => 'Id')) }}
+                    <label for="recipient-name" class="col-form-label">Nombre:</label>
+                    {{ Form::text('nombre', '', array('id' => 'nombre','class'=>'form-control',  'placeholder' => 'Escribe nombre del producto ','required' => 'required')) }}
+                    {{ Form::hidden('id_producto', '', array('id' => 'id_producto',  'placeholder' => 'Id')) }}
+
                 </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Descripcion:</label>
+                    {{ Form::textarea('descripcion', '', array('id' => 'descripcion','class'=>'form-control',  'placeholder' => 'Escribe descripcion del producto ','required' => 'required')) }}
+
+                </div>
+
+                <div class="modal-body">
+                    <label for="validationCustom12">Imagen del producto</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="fotografia_miniatura" name="fotografia_miniatura">
+                        <label class="custom-file-label">Elige la imagen</label>
+
+                    </div>
+                </div>
+
 
                 <div class="modal-footer">
                     {!! Form::submit( 'Actualizar', ['class' => 'btn btn-primary', 'name' => 'submitbutton', 'value' => 'login'])!!}
@@ -124,13 +154,15 @@
     $('#editModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
         var id = button.data('id')
-        var categoria = button.data('categoria')
-        var eliminado = button.data('eliminado')
+        var nombre = button.data('nombre')
+        var descripcion = button.data('descripcion')
+        var foto = button.data('imagen_producto')
 
         var modal = $(this)
-        modal.find('#id_categoria').val(id)
-        modal.find('#nombre_categoria').val(categoria)
-        modal.find('#eliminado').val(eliminado)
+        modal.find('#id_producto').val(id)
+        modal.find('#nombre').val(nombre)
+        modal.find('#descripcion').val(descripcion)
+        modal.find('#imagen_producto').val(foto)
 
     });
 
@@ -140,7 +172,7 @@
     (function($) {
         'use strict';
 
-        var datos = JSON.parse('<?= json_encode($categorias) ?>');
+        var datos = JSON.parse('<?= json_encode($productos) ?>');
 
         var arr = [];
 
@@ -149,10 +181,13 @@
             tmp.push(
 
 
-                objeto.nombre_categoria,
+                objeto.nombre,
+                objeto.descripcion,
+                '<img src="' + objeto.imagen_producto + '" width="100px" height="100px">',
 
-                '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="' + objeto.id_categoria + '" data-categoria="' + objeto.nombre_categoria + '"><i class="fa fa-trash"></i></button>' +
-                '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-id="' + objeto.id_categoria + '" data-categoria="' + objeto.nombre_categoria + '" data-eliminado="' + objeto.eliminado + '" ><i class="fa fa-pencil-alt"></i></button>'
+                '<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="' + objeto.id_producto + '" data-nombre="' + objeto.nombre + '"><i class="fa fa-trash"></i></button>' +
+
+                '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-id="' + objeto.id_producto + '" data-nombre="' + objeto.nombre + '" data-foto="' + objeto.imagen_producto + '" data-descripcion="' + objeto.descripcion + '" ><i class="fa fa-pencil-alt"></i></button>'
 
                 //objeto.id_alimento,
                 //objeto.id_categoria
@@ -167,8 +202,15 @@
             data: arr,
             columns: [
 
+
                 {
-                    title: "Categoria"
+                    title: "Nombre"
+                },
+                {
+                    title: "Descripcion"
+                },
+                {
+                    title: "Imagen"
                 },
                 {
                     title: "Acciones"
@@ -184,10 +226,10 @@
     $('#deleteModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget)
         var id = button.data('id')
-        var categoria = button.data('categoria')
+        var nombre = button.data('nombre')
         var modal = $(this)
-        modal.find('.col-form-label').text('¿Esta seguro que desea eliminar la categoría: ' + categoria + '?')
-        document.forms[0].id_categoria.value = id
+        modal.find('.col-form-label').text('¿Esta seguro que desea eliminar el producto: ' + nombre + '?')
+        document.forms[0].id_producto.value = id
     });
 
 </script>

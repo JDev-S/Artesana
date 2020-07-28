@@ -57,6 +57,15 @@ Route::get('/Admin_restaurante', function () {
 
 /*ADMINISTRADOR ALIMENTOS*/
 
+Route::get('/admin_alimentos','AlimentosController@alimentos_mostrar');
+Route::post('/admin_alimentos_borrar','AlimentosController@eliminar');
+Route::get('/agregar_alimento','AlimentosController@mostrar_insertar');
+Route::post('/Admin_alimentos_nuevo','AlimentosController@insertar')->name('Admin_alimentos_nuevo');
+
+
+Route::get('/actualizar_alimento','AlimentosController@mostrar_actualizar');
+Route::post('/Admin_alimentos_editar','AlimentosController@actualizar')->name('Admin_alimentos_editar');
+
 /*ADMINISTRADOR CATEGORIA*/
 
 Route::get('/admin_categoria','CategoriaController@categorias_mostrar');
@@ -75,3 +84,8 @@ Route::post('/Admin_metodo_de_pago_insertar','Metodo_de_pagoController@insertar'
 Route::post('/Admin_metodo_de_pago_actualizar','Metodo_de_pagoController@actualizar');
 
 /*ADMINISTRADOR PRODUCTO*/
+
+Route::get('/admin_producto','ProductoController@productos_mostrar');
+Route::post('/Admin_producto_borrar','ProductoController@eliminar');
+Route::post('/Admin_producto_nuevo','ProductoController@insertar');
+Route::post('/Admin_producto_editar','ProductoController@actualizar');
