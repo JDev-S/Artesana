@@ -41,76 +41,28 @@
                 <!--<span>~ Luxury & Quality ~</span>-->
             </div>
             <div class="row">
+                @foreach($platillos as $platillo)
                 <div class="col-md-6 col-lg-4">
                     <div class="post">
                         <div class="post-thumb">
-                            <a href="/info_platillo">
-                                <img src="\images\post-thumb-4.jpg" alt="">
+                            <a href="/info_platillo?platillo={{$platillo->id_alimento}}">
+                                <img src='{{$platillo->fotografia_miniatura}}' alt="img_fotografia">
                             </a>
-                            <div class="post-date">
-                                <div class="inner">
-                                    <span class="date">20</span>
-                                    <span class="month">June</span>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="post-body has-border bg-1">
                             <h5>
-                                <a href="/info_platillo">
-                                    On the other hand
+                                <a href="/info_platillo?platillo={{$platillo->id_alimento}}">
+                                   {{$platillo->nombre_alimento}}
                                 </a>
                             </h5>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
+                            <p>{{$platillo->descripcion}}.</p>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="post">
-                        <div class="post-thumb">
-                            <a href="/info_platillo">
-                                <img src="\images\post-thumb-5.jpg" alt="">
-                            </a>
-                            <div class="post-date">
-                                <div class="inner">
-                                    <span class="date">16</span>
-                                    <span class="month">June</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-body has-border bg-2">
-                            <h5>
-                                <a href="/info_platillo">Contrary to popular</a>
-                            </h5>
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
+                @endforeach
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="post mb-0">
-                        <div class="post-thumb">
-                            <a href="/info_platillo">
-                                <img src="\images\post-thumb-6.jpg" alt="">
-                            </a>
-                            <div class="post-date">
-                                <div class="inner">
-                                    <span class="date">10</span>
-                                    <span class="month">June</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-body has-border bg-3">
-                            <h5>
-                                <a href="/info_platillo">
-                                    This book is a treatise
-                                </a>
-                            </h5>
-                            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -371,76 +323,27 @@
                 <!--<span>~ Great articles ~</span>-->
             </div>
             <div class="row">
+                @foreach($nuevos as $nuevo)
                 <div class="col-md-6 col-lg-4">
                     <div class="post">
                         <div class="post-thumb">
-                            <a href="/info_platillo">
-                                <img src="\images\post-thumb-4.jpg" alt="">
+                            <a href="/info_platillo?platillo={{$nuevo->id_alimento}}">
+                                <img src="{{$nuevo->fotografia_miniatura}}" alt="">
                             </a>
-                            <div class="post-date">
-                                <div class="inner">
-                                    <span class="date">20</span>
-                                    <span class="month">June</span>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="post-body has-border bg-1">
                             <h5>
-                                <a href="/info_platillo">
-                                    On the other hand
+                                <a href="/info_platillo?platillo={{$nuevo->id_alimento}}">
+                                    {{$nuevo->nombre_alimento}}
                                 </a>
                             </h5>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</p>
+                            <p>{{$nuevo->descripcion}}.</p>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="post">
-                        <div class="post-thumb">
-                            <a href="/info_platillo">
-                                <img src="\images\post-thumb-5.jpg" alt="">
-                            </a>
-                            <div class="post-date">
-                                <div class="inner">
-                                    <span class="date">16</span>
-                                    <span class="month">June</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-body has-border bg-2">
-                            <h5>
-                                <a href="/info_platillo">Contrary to popular</a>
-                            </h5>
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="post mb-0">
-                        <div class="post-thumb">
-                            <a href="/info_platillo">
-                                <img src="\images\post-thumb-6.jpg" alt="">
-                            </a>
-                            <div class="post-date">
-                                <div class="inner">
-                                    <span class="date">10</span>
-                                    <span class="month">June</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="post-body has-border bg-3">
-                            <h5>
-                                <a href="/info_platillo">
-                                    This book is a treatise
-                                </a>
-                            </h5>
-                            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
-
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

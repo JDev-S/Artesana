@@ -5,13 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    @yield('metas')
     <title>Foodtech Dashboard</title>
     <!-- Iconic Fonts -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="vendors\iconic-fonts\font-awesome\css\all.min.css" rel="stylesheet">
+    <link href="\vendors\iconic-fonts\font-awesome\css\all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="\vendors\iconic-fonts\flat-icons\flaticon.css">
     <link rel="stylesheet" href="\vendors\iconic-fonts\cryptocoins\cryptocoins.css">
     <link rel="stylesheet" href="\vendors\iconic-fonts\cryptocoins\cryptocoins-colors.css">
+    @yield('styles')
     <!-- Bootstrap core CSS -->
     <link href="\assets\css\bootstrap.min.css" rel="stylesheet">
     <!-- jQuery UI -->
@@ -57,94 +59,105 @@
         <!-- Navigation -->
         <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
             <!-- Dashboard -->
-            <li class="menu-item">
-                <a href="/Admin_restaurante" class="has-chevron" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard"> <span><i class="material-icons fs-16">dashboard</i>Inicio </span>
-                </a>
 
-            </li>
             <!-- /Dashboard -->
             <!-- product -->
-            <li class="menu-item">
-                <a href="/Admin_alimentos" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="product"> <span><i class="fa fa-archive fs-16"></i>Alimentos </span>
-                </a>
-                <ul id="product" class="collapse" aria-labelledby="product" data-parent="#side-nav-accordion">
-                    <li> <a href="/admin_alimentos">Listado de alimentos</a>
-                    </li>
-                    <li> <a href="/agregar_alimento">Agregar alimentos</a>
-                    </li>
-                </ul>
-            </li>
+
             <!-- product end -->
             <!-- orders -->
-
+            <li class="menu-item">
+                <a href="/Admin_restaurante"> <span><i class="fas fa-clipboard-list fs-16"></i>Inicio</span>
+                </a>
+            </li>
             <!-- orders end -->
             <!-- restaurants -->
             <!-- restaurants end -->
             <!-- Invoice -->
             <li class="menu-item">
-                <a href="/admin_categoria" class="has-chevron" data-toggle="collapse" data-target="#invoice" aria-expanded="false" aria-controls="invoice"> <span><i class="fas fa-file-invoice fs-16"></i>Categorías</span>
+                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard"> <span><i class="fa fa-archive fs-16"></i>Alimentos </span>
                 </a>
-                <ul id="invoice" class="collapse" aria-labelledby="invoice" data-parent="#side-nav-accordion">
-                    <li> <a href="/admin_categoria">Listado de categorías</a>
+                <ul id="dashboard" class="collapse" aria-labelledby="dashboard" data-parent="#side-nav-accordion">
+
+                    <li> <a href="/admin_alimentos">Listado de alimentos</a>
                     </li>
+
+                    <li> <a href="/agregar_alimento">Agregar alimento</a>
+                    </li>
+
                 </ul>
             </li>
             <!-- Invoice end -->
             <!-- customers-->
             <li class="menu-item">
-                <a href="/admin_metodo_de_pago" class="has-chevron" data-toggle="collapse" data-target="#customer" aria-expanded="false" aria-controls="customer"> <span><i class="fas fa-user-friends fs-16"></i>Meotodos de pago </span>
+                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#customer" aria-expanded="false" aria-controls="customer"> <span><i class="fa fa-archive fs-16"></i>Categoría </span>
                 </a>
                 <ul id="customer" class="collapse" aria-labelledby="customer" data-parent="#side-nav-accordion">
-                    <li> <a href="/admin_metodo_de_pago">Listado de pagos</a>
+                    <!--<li> <a href="pages\product\productcata.html">Menu Catalogue</a>
+          </li>-->
+                    <li> <a href="/admin_categoria">Listado de Categorias</a>
                     </li>
                 </ul>
             </li>
             <!-- Customers  end -->
             <!-- sales -->
+
             <!-- Basic UI Elements -->
+            <li class="menu-item">
+                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#form-elements" aria-expanded="false" aria-controls="form-elements"> <span><i class="fa fa-archive fs-16"></i>Metodos de pago </span>
+                </a>
+                <ul id="form-elements" class="collapse" aria-labelledby="form-elements" data-parent="#side-nav-accordion">
+
+                    <li> <a href="/admin_metodo_de_pago">Listado de Metodos de pago</a>
+                    </li>
+
+                </ul>
+            </li>
+            <!-- /Basic UI Elements -->
+            <!-- Advanced UI Elements -->
+            <li class="menu-item">
+                <a href="/admin_horario" class="has-chevron" data-toggle="collapse" data-target="#horario" aria-expanded="false" aria-controls="form-elements"> <span><i class="fa fa-archive fs-16"></i>Horario </span>
+                </a>
+                <ul id="horario" class="collapse" aria-labelledby="horario" data-parent="#side-nav-accordion">
+
+                    <li> <a href="/admin_horario">Mostrar horario</a>
+                    </li>
+
+                </ul>
+            </li>
+            <!-- /Advanced UI Elements -->
+
+            <!-- Form Elements -->
             <li class="menu-item">
                 <a href="#" class="has-chevron" data-toggle="collapse" data-target="#basic-elements" aria-expanded="false" aria-controls="basic-elements"> <span><i class="fas fa-user-friends fs-16"></i>Otros productos </span>
                 </a>
                 <ul id="basic-elements" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
-                    <li> <a href="pages\customer\customersreview.html">Listado de productos</a>
+                    <li> <a href="/admin_producto">Listado de productos</a>
                     </li>
                 </ul>
             </li>
-
-            <li class="menu-item">
-                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#horario" aria-expanded="false" aria-controls="horario"> <span><i class="fas fa-user-friends fs-16"></i>Horario </span>
-                </a>
-                <ul id="horario" class="collapse" aria-labelledby="horario" data-parent="#side-nav-accordion">
-                    <li> <a href="/admin_horario">Listado del horario</a>
-                    </li>
-                </ul>
-            </li>
-
-            <!-- /Basic UI Elements -->
-            <!-- Advanced UI Elements -->
-
-            <!-- /Advanced UI Elements -->
-
-            <!-- Form Elements -->
-
             <!-- /Form Elements -->
             <!-- Charts -->
 
             <!-- /Charts -->
             <!-- Tables -->
+
             <!-- /Tables -->
             <!-- Popups -->
 
             <!-- /Popups -->
             <!-- Icons -->
+
             <!-- /Icons -->
             <!-- Maps -->
 
             <!-- /Maps -->
+
             <!-- / bonus Pages -->
             <!-- Pages -->
+
             <!-- /Pages -->
             <!-- Apps -->
+
             <!-- /Apps -->
         </ul>
     </aside>
@@ -211,11 +224,35 @@
             </div>
         </div>
     </aside>
+    <!-- Main Content -->
+    <main class="body-content">
+        <!-- Navigation Bar -->
+        <nav class="navbar ms-navbar">
+            <div class="ms-aside-toggler ms-toggler pl-0" data-target="#ms-side-nav" data-toggle="slideLeft"> <span class="ms-toggler-bar bg-primary"></span>
+                <span class="ms-toggler-bar bg-primary"></span>
+                <span class="ms-toggler-bar bg-primary"></span>
+            </div>
+            <div class="logo-sn logo-sm ms-d-block-sm">
+                <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="index.html"><img src="assets\img\foodtech\foodtech-logo-84x41.png" alt="logo"> </a>
+            </div>
+            <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
 
-    @yield('contenido')
+            </ul>
+            <div class="ms-toggler ms-d-block-sm pr-0 ms-nav-toggler" data-toggle="slideDown" data-target="#ms-nav-options"> <span class="ms-toggler-bar bg-primary"></span>
+                <span class="ms-toggler-bar bg-primary"></span>
+                <span class="ms-toggler-bar bg-primary"></span>
+            </div>
+        </nav>
+
+        @yield('contenido')
+
+    </main>
     <!-- MODALS -->
     <!-- Quick bar -->
     <aside id="ms-quick-bar" class="ms-quick-bar fixed ms-d-block-lg">
+
+
+
         <!-- Quick bar Content -->
         <div class="ms-quick-bar-content">
 
@@ -358,7 +395,7 @@
                                         <li class="ms-scrollable ms-dropdown-list ms-members-list">
                                             <a class="media p-2" href="#">
                                                 <div class="mr-2 align-self-center">
-                                                    <img src="\assets\img\people\people-10.jpg" class="ms-img-round" alt="people">
+                                                    <img src="assets\img\people\people-10.jpg" class="ms-img-round" alt="people">
                                                 </div>
                                                 <div class="media-body">
                                                     <span>John Doe</span>
@@ -366,7 +403,7 @@
                                             </a>
                                             <a class="media p-2" href="#">
                                                 <div class="mr-2 align-self-center">
-                                                    <img src="\assets\img\people\people-9.jpg" class="ms-img-round" alt="people">
+                                                    <img src="assets\img\people\people-9.jpg" class="ms-img-round" alt="people">
                                                 </div>
                                                 <div class="media-body">
                                                     <span>Raymart Sandiago</span>
@@ -374,7 +411,7 @@
                                             </a>
                                             <a class="media p-2" href="#">
                                                 <div class="mr-2 align-self-center">
-                                                    <img src="\assets\img\people\people-7.jpg" class="ms-img-round" alt="people">
+                                                    <img src="assets\img\people\people-7.jpg" class="ms-img-round" alt="people">
                                                 </div>
                                                 <div class="media-body">
                                                     <span>Heather Brown</span>
@@ -418,7 +455,7 @@
                                         <li class="ms-scrollable ms-dropdown-list ms-members-list">
                                             <a class="media p-2" href="#">
                                                 <div class="mr-2 align-self-center">
-                                                    <img src="\assets\img\people\people-10.jpg" class="ms-img-round" alt="people">
+                                                    <img src="assets\img\people\people-10.jpg" class="ms-img-round" alt="people">
                                                 </div>
                                                 <div class="media-body">
                                                     <span>John Doe</span>
@@ -426,7 +463,7 @@
                                             </a>
                                             <a class="media p-2" href="#">
                                                 <div class="mr-2 align-self-center">
-                                                    <img src="\assets\img\people\people-9.jpg" class="ms-img-round" alt="people">
+                                                    <img src="assets\img\people\people-9.jpg" class="ms-img-round" alt="people">
                                                 </div>
                                                 <div class="media-body">
                                                     <span>Raymart Sandiago</span>
@@ -434,7 +471,7 @@
                                             </a>
                                             <a class="media p-2" href="#">
                                                 <div class="mr-2 align-self-center">
-                                                    <img src="\assets\img\people\people-7.jpg" class="ms-img-round" alt="people">
+                                                    <img src="assets\img\people\people-7.jpg" class="ms-img-round" alt="people">
                                                 </div>
                                                 <div class="media-body">
                                                     <span>Heather Brown</span>
@@ -614,7 +651,6 @@
     <script src="\assets\js\framework.js"></script>
     <!-- Settings -->
     <script src="\assets\js\settings.js"></script>
-
     @yield('scripts')
 </body>
 

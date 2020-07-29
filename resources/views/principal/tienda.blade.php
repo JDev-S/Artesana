@@ -17,7 +17,11 @@
 						<div class="col-md-9">
 							<div class="sorting">
                                 <p class="woocommerce-result-count">
-										Showing 1–15 of 27 results
+										
+                                    <?php
+                                    echo 'Mostrando '. $pagina.' - '.$pagina*12;
+                                    echo ' de '.$numero_platillos[0]->numero_platillos.'  Resultado';
+                                    ?>
 									</p>
 								<!--<form method="get" class="woocommerce-ordering">
 									
@@ -34,44 +38,19 @@
 								</form>-->
 							</div>
 							<div class="row products">
+                                
+                                @foreach($alimentos as $alimento)
 								<div class="col-md-6 col-lg-4">
 									<div class="item">
 										<div class="thumb">
 											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-1.jpg" alt="">
+												<img src="{{$alimento->fotografia_miniatura}}" alt="">
 											</a>
 											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
 										</div>
 										<div class="info">
 											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Bacon coil baked</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star-outline"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>65
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-2.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Chantal's New York</a>
+												<a href="/info_platillo?platillo={{$alimento->id_alimento}}">{{$alimento->nombre_alimento}}</a>
 											</h5>
 											<div class="star-rating">
 												<i class="zmdi zmdi-star"></i>
@@ -82,286 +61,17 @@
 											</div>
 											<span class="price">
 												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>12
+													<span class="woocommerce-Price-currencySymbol">$</span>{{$alimento->precio}}
 												</span>
 											</span>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-3.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Mongolian Beef</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>23
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-4.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Angela's Awesome</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star-outline"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>28
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-5.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Colleen's Slow Cooker</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>39
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-6.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Baked Teriyaki Chicken</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star-outline"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>24
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-7.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Sour Cream Bread</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>34
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-8.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Best Brownies</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>27
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-9.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Mom's Zucchini Bread</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>12
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-10.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Too Much Chocolate</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>16
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-11.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Fluffy Pancakes</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star-outline"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>25
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="images\shop-list-12.jpg" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo">Easter Breakfast</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>29
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
+                                @endforeach
 							</div>
 							<div class="woocommerce-pagination">
 								<ul class="page-numbers">
-									<li>
+									<!--<li>
 										<a href="#" class="page-numbers prev">
 											<span class="lnr lnr-arrow-left"></span>
 										</a>
@@ -383,7 +93,9 @@
 										<a href="#" class="page-numbers next">
 											<span class="lnr lnr-arrow-right"></span>
 										</a>
-									</li>
+									</li>-->
+                                    
+                                    
 								</ul>
 							</div>
 						</div>
@@ -427,21 +139,14 @@
 										<h5>Categorias</h5>
 									</div>
 									<ul>
-										<li>
-											<a href="#">Seafood (<span>2</span>)</a>
+                                        <li>
+											<a href="/tienda">Todas</a>
 										</li>
+                                        @foreach($categorias as $categoria)
 										<li>
-											<a href="#">Coffee (<span>5</span>)</a>
+											<a href="/tienda/1/{{$categoria->id_categoria}}">{{$categoria->nombre_categoria}}</a>
 										</li>
-										<li>
-											<a href="#">Restaurant (<span>18</span>)</a>
-										</li>
-										<li>
-											<a href="#">Cupcake (<span>22</span>)</a>
-										</li>
-										<li>
-											<a href="#">Lunch (<span>19</span>)</a>
-										</li>
+										@endforeach
 									</ul>
 								</div>
 								<!-- FEATURED PRODUCT -->
@@ -449,67 +154,25 @@
 									<div class="widget-title">
 										<h5>Platillos nuevos</h5>
 									</div>
+                                    
 									<div class="featured-product">
+                                        @foreach($nuevos as $nuevo)
 										<div class="featured-product__item">
-											<a href="/info_platillo" class="thumb">
-												<img src="images\featured-product-1.png" alt="">
+											<a href="/info_platillo?platillo={{$nuevo->id_alimento}}" class="thumb">
+												<img src="{{$nuevo->fotografia_miniatura}}" alt="img_foto">
 											</a>
 											<div class="info">
 												<h6 class="woocommerce-loop-product__title">
-													<a href="/info_platillo">Spicy Garlic Lime</a>
+													<a href="/info_platillo?platillo={{$nuevo->id_alimento}}">{{$nuevo->nombre_alimento}}</a>
 												</h6>
 												<span class="price">
 													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>26
+														<span class="woocommerce-Price-currencySymbol">$</span>{{$nuevo->precio}}
 													</span>
 												</span>
 											</div>
 										</div>
-										<div class="featured-product__item">
-											<a href="/info_platillo" class="thumb">
-												<img src="images\featured-product-2.png" alt="">
-											</a>
-											<div class="info">
-												<h6 class="woocommerce-loop-product__title">
-													<a href="/info_platillo">Baked Teriyaki</a>
-												</h6>
-												<span class="price">
-													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>12
-													</span>
-												</span>
-											</div>
-										</div>
-										<div class="featured-product__item">
-											<a href="/info_platillo" class="thumb">
-												<img src="images\featured-product-3.png" alt="">
-											</a>
-											<div class="info">
-												<h6 class="woocommerce-loop-product__title">
-													<a href="/info_platillo">Brown Sugar Meatloaf </a>
-												</h6>
-												<span class="price">
-													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>13
-													</span>
-												</span>
-											</div>
-										</div>
-										<div class="featured-product__item">
-											<a href="/info_platillo" class="thumb">
-												<img src="images\featured-product-4.png" alt="">
-											</a>
-											<div class="info">
-												<h6 class="woocommerce-loop-product__title">
-													<a href="/info_platillo">The Best Meatloaf </a>
-												</h6>
-												<span class="price">
-													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>19
-													</span>
-												</span>
-											</div>
-										</div>
+                                        @endforeach
 									</div>
 								</div>
 								<!-- BANNER -->

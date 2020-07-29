@@ -12,7 +12,7 @@
                         <h6>Formulario de alimento</h6>
                     </div>
                     <?php
-               $query2 = "select * from categoria ";
+               $query2 = "select * from categoria where eliminado!=1 ";
 
                 $data2=DB::select($query2);
               

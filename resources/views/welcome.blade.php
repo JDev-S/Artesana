@@ -28,6 +28,7 @@
         <link rel="stylesheet" type="text/css" href="\vendor\revolution-slider\css\layers.css">
         <link rel="stylesheet" type="text/css" href="\vendor\revolution-slider\css\navigation.css">
         <link rel="stylesheet" type="text/css" href="\vendor\revolution-slider\css\settings.css">
+        @yield('styles')
 
         <!-- SIDENAV MOBILE -->
         <link rel="stylesheet" href="\vendor\hcmobilenav\demo.css">
@@ -800,5 +801,7 @@
 		
 		<!-- MAIN JS -->
 		<script src="\js\main.min.js"></script>
+        @yield('scripts')
+        
 	</body>
 </html>

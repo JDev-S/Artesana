@@ -23,15 +23,7 @@
                         </div>
                         <div class="body">
                             <p>Panaderia con excelente producto con ingredientes de primera calidad. Empresa 100 % Mexicana que abre sus puertas en Salamanca, Gto.</p>
-                            <div class="end">
-                                <img src="images\signature-2.png" alt="">
-                                <div class="name">
-                                    <h6>
-                                        <a href="#">Jonathan Yepez Padrón</a>
-                                    </h6>
-                                    <span>Propietario de LA ARTESANA</span>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -87,36 +79,57 @@
                 <h2 class="text-white">Otros productos</h2>
                 <!--<span>~ Experiences on food ~</span>-->
             </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="our-service-col">
-                        <h3>- Buffet -</h3>
-                        <img src="images\serve-white-icon.png" alt="">
-                        <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="our-service-col">
-                        <h3>- Platillos a la carta -</h3>
-                        <img src="images\fresh-food-white-icon.png" alt="">
-                        <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="our-service-col mb-md-0">
-                        <h3>- Bebidas-</h3>
-                        <img src="images\coffee-white-icon.png" alt="">
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="our-service-col mb-0">
-                        <h3>- Reposteria -</h3>
-                        <img src="images\coffee-white-icon.png" alt="">
-                        <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
-                    </div>
-                </div>
-            </div>
+            <?php
+              $query = "select * from producto";
+              $productos=DB::select($query);
+             $i=1;
+            foreach($productos as $producto)
+            {
+                if($i==1)
+                {
+                    echo '
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="our-service-col">
+                                <h3>- Buffet -</h3>
+                                <img src="images\serve-white-icon.png" alt="">
+                                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
+                            </div>
+                        </div>';
+                     
+                    $i++;
+                }
+                else
+                    if($i>1 && $i<4)
+                    {
+                         echo '
+                   
+                        <div class="col-md-6 col-lg-3">
+                            <div class="our-service-col">
+                                <h3>- Buffet -</h3>
+                                <img src="images\serve-white-icon.png" alt="">
+                                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
+                            </div>
+                        </div>'; 
+                    $i++;
+                    }
+                else
+                    if($i==4)
+                    {
+                         echo '
+                        <div class="col-md-6 col-lg-3">
+                            <div class="our-service-col">
+                                <h3>- Buffet -</h3>
+                                <img src="images\serve-white-icon.png" alt="">
+                                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae.</p>
+                            </div>
+                        </div>
+                    </div>';    
+                        $i=1;
+                    }  
+            }
+            
+            ?>
         </div>
     </section>
 

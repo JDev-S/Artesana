@@ -14,13 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 /*VISTA PRINCIPAL*/
-Route::get('/', function () {
-    return view('/principal/index');
-});
+Route::get('/','AlimentosController@mostrar_principal');
 /*VISTA DE TIENDA*/
-Route::get('/tienda', function () {
-    return view('/principal/tienda');
-});
+Route::get('/tienda/{pagina?}/{categoria?}/{buscar?}','AlimentosController@mostrar_tienda');
 /*VISTA CONTACTOS*/
 Route::get('/contacto', function () {
     return view('/principal/contacto');
@@ -32,9 +28,7 @@ Route::get('/acerca_de', function () {
     return view('/principal/acerca_De');
 });
 /*VISTA DE INFORMACION DEL PLATILLO*/
-Route::get('/info_platillo', function () {
-    return view('/principal/info_platillo');
-});
+Route::get('/info_platillo','AlimentosController@mostrar_platillo');
 /*VISTA DEL CARRITO DE COMPRAS*/
 Route::get('/carrito_compras', function () {
     return view('/principal/carrito_compras');
@@ -89,3 +83,8 @@ Route::get('/admin_producto','ProductoController@productos_mostrar');
 Route::post('/Admin_producto_borrar','ProductoController@eliminar');
 Route::post('/Admin_producto_nuevo','ProductoController@insertar');
 Route::post('/Admin_producto_editar','ProductoController@actualizar');
+
+/*ADMINISTRADOR DE IMAGENES MUESTRA*/
+Route::get('/admin_imagenes_muestra/{alimento?}','Imagenes_muestraController@imagenes_de_muestra_mostrar');
+Route::post('/admin_imagenes_muestra_eliminar','Imagenes_muestraController@eliminar')->name('admin_imagenes_muestra_eliminar');
+Route::post('/Admin_imagenes_muestra_insertar','Imagenes_muestraController@insertar')->name('Admin_imagenes_muestra_insertar');
