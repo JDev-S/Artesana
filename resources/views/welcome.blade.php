@@ -291,7 +291,7 @@
 				<div class="right">
 					<div class="action">
 						<div class="notify">
-							<img src="images\notify.png" alt="">
+							<img src="\images\notify.png" alt="">
 							<span class="notify-amount">4</span>
 							
 							<!-- WIDGET SHOPPING -->
@@ -648,23 +648,22 @@
 				</a>
 				<p class="text">Panaderia con excelente producto con ingredientes de primera calidad. Empresa 100 % Mexicana que abre sus puertas en Salamanca, Gto.</p>
 				<!-- SLIDER -->
-				<div class="owl-carousel owl-theme image-slider style-1" id="image-carousel">
-				    <div class="item">
-				    	<a href="#">
-				    		<img src='\images\menu-sidebar-slide-1.jpg' alt="">
+                <?php
+               $query = "select * from alimentos limit 3";
+              $alimentos=DB::select($query);
+				echo'<div class="owl-carousel owl-theme image-slider style-1" id="image-carousel">';
+                foreach($alimentos as $alimento)
+                {
+
+				    echo'<div class="item">
+				    	<a href="info_platillo?platillo='.$alimento->id_alimento.'">
+				    		<img src="'.$alimento->fotografia_miniatura.'" alt="">
 				    	</a>
-				    </div>
-				    <div class="item">
-				    	<a href="#">
-				    		<img src='\images\menu-sidebar-slide-2.jpg' alt="">
-				    	</a>
-				    </div>
-				    <div class="item">
-				    	<a href="#">
-				    		<img src='\images\menu-sidebar-slide-3.jpg' alt="">
-				    	</a>
-				    </div>
-				</div>
+				    </div>';
+                }
+				echo '</div>';
+                
+                ?>
 				<!-- CONTACT -->
 				<div class="contact-part">
 					<div class="contact-line">

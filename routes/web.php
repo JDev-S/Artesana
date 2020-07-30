@@ -37,11 +37,16 @@ Route::get('/carrito_compras', function () {
 Route::get('/pagar', function () {
     return view('/principal/pagar');
 });
-
-
-Route::get('/prueba', function () {
-    return view('/principal/prueba');
+/*FORMA PARA LOGIN*/
+Route::get('/Administrador_login', function () {
+    return view('/principal/login');
 });
+
+/*Poder iniciar sesion*/
+Route::post('/Admin_consola', 'LoguinController@login')->name('logueo');
+
+/*CERRAR SESION*/
+Route::get('/cerrar_sesion','LoguinController@Logout');
 
 /*APARTADO PARA EL ADMINISTRADOR*/
 /*INICIO PARA LA VENTANA DEL ADMINISTRADOR*/
@@ -49,42 +54,43 @@ Route::get('/Admin_restaurante', function () {
     return view('/Administrador/index');
 });
 
+
 /*ADMINISTRADOR ALIMENTOS*/
 
-Route::get('/admin_alimentos','AlimentosController@alimentos_mostrar');
+Route::get('/admin_alimentos','AlimentosController@alimentos_mostrar')->middleware('admin:1')->name('admin_alimentos');
 Route::post('/admin_alimentos_borrar','AlimentosController@eliminar');
-Route::get('/agregar_alimento','AlimentosController@mostrar_insertar');
+Route::get('/agregar_alimento','AlimentosController@mostrar_insertar')->middleware('admin:1')->name('agregar_alimento');
 Route::post('/Admin_alimentos_nuevo','AlimentosController@insertar')->name('Admin_alimentos_nuevo');
 
 
-Route::get('/actualizar_alimento','AlimentosController@mostrar_actualizar');
+Route::get('/actualizar_alimento','AlimentosController@mostrar_actualizar')->middleware('admin:1')->name('actualizar_alimento');
 Route::post('/Admin_alimentos_editar','AlimentosController@actualizar')->name('Admin_alimentos_editar');
 
 /*ADMINISTRADOR CATEGORIA*/
 
-Route::get('/admin_categoria','CategoriaController@categorias_mostrar');
+Route::get('/admin_categoria','CategoriaController@categorias_mostrar')->middleware('admin:1')->name('admin_categoria');
 Route::post('/Admin_categoria_borrar','CategoriaController@eliminar');
 Route::post('/Admin_categoria_nuevo','CategoriaController@insertar');
 Route::post('/Admin_categoria_editar','CategoriaController@actualizar');
 
 /*ADMINISTRADOR HORARIO*/
-Route::get('/admin_horario','HorarioController@horario_mostrar');
+Route::get('/admin_horario','HorarioController@horario_mostrar')->middleware('admin:1')->name('admin_horario');
 Route::post('/admin_horario_editar','HorarioController@actualizar');
 
 /*ADMINISTRADOR METODO DE PAGO*/
-Route::get('/admin_metodo_de_pago','Metodo_de_pagoController@metodo_pago_mostrar');
+Route::get('/admin_metodo_de_pago','Metodo_de_pagoController@metodo_pago_mostrar')->middleware('admin:1')->name('admin_metodo_de_pago');
 Route::post('/admin_metodo_de_pago_eliminar','Metodo_de_pagoController@eliminar');
 Route::post('/Admin_metodo_de_pago_insertar','Metodo_de_pagoController@insertar');
 Route::post('/Admin_metodo_de_pago_actualizar','Metodo_de_pagoController@actualizar');
 
 /*ADMINISTRADOR PRODUCTO*/
 
-Route::get('/admin_producto','ProductoController@productos_mostrar');
+Route::get('/admin_producto','ProductoController@productos_mostrar')->middleware('admin:1')->name('admin_producto');
 Route::post('/Admin_producto_borrar','ProductoController@eliminar');
 Route::post('/Admin_producto_nuevo','ProductoController@insertar');
 Route::post('/Admin_producto_editar','ProductoController@actualizar');
 
 /*ADMINISTRADOR DE IMAGENES MUESTRA*/
-Route::get('/admin_imagenes_muestra/{alimento?}','Imagenes_muestraController@imagenes_de_muestra_mostrar');
+Route::get('/admin_imagenes_muestra/{alimento?}','Imagenes_muestraController@imagenes_de_muestra_mostrar')->middleware('admin:1')->name('admin_imagenes_muestra');
 Route::post('/admin_imagenes_muestra_eliminar','Imagenes_muestraController@eliminar')->name('admin_imagenes_muestra_eliminar');
 Route::post('/Admin_imagenes_muestra_insertar','Imagenes_muestraController@insertar')->name('Admin_imagenes_muestra_insertar');

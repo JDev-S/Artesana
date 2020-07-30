@@ -1,29 +1,29 @@
 @extends('welcome')
 @section('contenido')
 
-		<main>
-			<!-- PAGE INFO -->
-			<section class="page-info set-bg" data-image-src="images/page-info-bg-5.jpg">
-				<div class="section-header">
-					<h1 class="text-white">Lista de platillos</h1>
-					<span>~ Deliciosa comida ~</span>
-				</div>
-			</section>
-			
-			<!-- SHOP LIST -->
-			<section class="section-primary pt-150 pb-113 shop-list">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-9">
-							<div class="sorting">
-                                <p class="woocommerce-result-count">
-										
-                                    <?php
+<main>
+    <!-- PAGE INFO -->
+    <section class="page-info set-bg" data-image-src="/images/page-info-bg-5.jpg">
+        <div class="section-header">
+            <h1 class="text-white">Lista de platillos</h1>
+            <span>~ Deliciosa comida ~</span>
+        </div>
+    </section>
+
+    <!-- SHOP LIST -->
+    <section class="section-primary pt-150 pb-113 shop-list">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="sorting">
+                        <p class="woocommerce-result-count">
+
+                            <?php
                                     echo 'Mostrando '. $pagina.' - '.$pagina*12;
                                     echo ' de '.$numero_platillos[0]->numero_platillos.'  Resultado';
                                     ?>
-									</p>
-								<!--<form method="get" class="woocommerce-ordering">
+                        </p>
+                        <!--<form method="get" class="woocommerce-ordering">
 									
 									<div class="form-holder">
 										<select name="orderby" class="orderby form-control">
@@ -36,82 +36,277 @@
 										<span class="lnr lnr-chevron-down"></span>
 									</div>
 								</form>-->
-							</div>
-							<div class="row products">
-                                
-                                @foreach($alimentos as $alimento)
-								<div class="col-md-6 col-lg-4">
-									<div class="item">
-										<div class="thumb">
-											<a href="shop-single.html" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-												<img src="{{$alimento->fotografia_miniatura}}" alt="">
-											</a>
-											<a href="/info_platillo" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
-										</div>
-										<div class="info">
-											<h5 class="woocommerce-loop-product__title">
-												<a href="/info_platillo?platillo={{$alimento->id_alimento}}">{{$alimento->nombre_alimento}}</a>
-											</h5>
-											<div class="star-rating">
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-												<i class="zmdi zmdi-star"></i>
-											</div>
-											<span class="price">
-												<span class="woocommerce-Price-amount amount">
-													<span class="woocommerce-Price-currencySymbol">$</span>{{$alimento->precio}}
-												</span>
-											</span>
-										</div>
-									</div>
-								</div>
-                                @endforeach
-							</div>
-							<div class="woocommerce-pagination">
-								<ul class="page-numbers">
-									<!--<li>
-										<a href="#" class="page-numbers prev">
-											<span class="lnr lnr-arrow-left"></span>
-										</a>
-									</li>
-									<li>
-										<span class="page-numbers current">1</span>
-									</li>
-									<li>
-										<a href="#" class="page-numbers inactive">
-											2
-										</a>
-									</li>
-									<li>
-										<a href="#" class="page-numbers inactive">
-											3
-										</a>
-									</li>
-									<li>
-										<a href="#" class="page-numbers next">
+                    </div>
+                    <div class="row products">
+
+                        @foreach($alimentos as $alimento)
+                        <div class="col-md-6 col-lg-4">
+                            <div class="item">
+                                <div class="thumb">
+                                    <a href="/info_platillo?platillo={{$alimento->id_alimento}}" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                                        <img src="{{$alimento->fotografia_miniatura}}" alt="">
+                                    </a>
+                                    <a href="/info_platillo?platillo={{$alimento->id_alimento}}" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
+                                </div>
+                                <div class="info">
+                                    <h5 class="woocommerce-loop-product__title">
+                                        <a href="/info_platillo?platillo={{$alimento->id_alimento}}">{{$alimento->nombre_alimento}}</a>
+                                    </h5>
+                                    <div class="star-rating">
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                        <i class="zmdi zmdi-star"></i>
+                                    </div>
+                                    <span class="price">
+                                        <span class="woocommerce-Price-amount amount">
+                                            <span class="woocommerce-Price-currencySymbol">$</span>{{$alimento->precio}}
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="woocommerce-pagination">
+                        <ul class="page-numbers">
+                            <?php
+                       $paginacion= $numero_platillos[0]->numero_platillos/12;
+                       $paginacion=ceil($paginacion); 
+                    if(empty($buscar))
+                    {
+                            if(empty($categoria))
+                        {
+
+                             if($pagina>1)
+                           {
+                               if($pagina>$paginacion)
+                               {
+                                   //echo'<li><a href="/'.$paginacion.'">«</a></li>';
+                                   //echo '<a class="next page-numbers" href="/index/'.$paginacion.'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-left"></i></a>';
+                                   
+                                    echo'<li>
+                                        <a href="/tienda/'.$paginacion.'/" class="page-numbers prev">
+                                            <span class="lnr lnr-arrow-left"></span>
+                                        </a>
+                                    </li>';
+                               }
+                        else
+                               {
+                                   //echo'<li><a href="/'.($pagina-1).'">«</a></li>';
+                                  // echo '<a class="next page-numbers" href="/index/'.($pagina-1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-left"></i></a>';
+                            
+                                       echo'<li>
+                                        <a href="/tienda/'.($pagina-1).'/" class="page-numbers prev">
+                                            <span class="lnr lnr-arrow-left"></span>
+                                        </a>
+                                    </li>';
+                               }
+
+                           }                
+
+                           for($i=1;$i<=ceil($numero_platillos[0]->numero_platillos/12);$i++)
+                           {
+                               if($i==$pagina)
+                               {
+                                   //echo'<li class="active"><a  href="/'.$i.'">'.$i.'</a></li>';
+                                  // echo '<span class="page-numbers current"><a  href="/index/'.$i.'/'.$categoria.'/'.$buscar.'">'.$i.'</a></span>';
+                                echo'   <li>
+                                       <a href="/tienda/'.$i.'/"> <span class="page-numbers current">'.$i.'</span> </a>
+                                  </li>';
+
+                               }
+                               else
+                               {
+                                   //echo'<li><a  href="/'.$i.'">'.$i.'</a></li>';
+                                    //echo '<a class="page-numbers" href="/index/'.$i.'/'.$categoria.'/'.$buscar.'">'.$i.'</a>';
+                                   echo' <li>
+                                        <a href="/tienda/'.$i.'/" class="page-numbers inactive">'
+                                            .$i.'
+                                        </a>
+                                    </li>';
+                               }
+
+                           }
+
+                           if($pagina<$paginacion)
+                           {
+                               //echo'<li><a href="/'.($pagina+1).'">»</a></li>';
+                                //echo '<a class="next page-numbers" href="/index/'.($pagina+1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-right"></i></a>';
+                               
+                                    echo '<li>
+										<a href=href="/tienda/'.($pagina+1).'/" class="page-numbers next">
 											<span class="lnr lnr-arrow-right"></span>
 										</a>
-									</li>-->
-                                    
-                                    
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="sidebar">
-								<!-- SEARCH -->
-								<div class="widgets widget_search">
-									<form method="get" class="search-form">
-										<input class="form-control" type="text" name="s" id="s" placeholder="Buscar">
-										<button class="search-icon">
-											<span class="lnr lnr-magnifier"></span>
-										</button>
-									</form>
-								</div>
-								<!-- FILTER -->
-								<!--<div class="widgets woocommerce widget_price_filter">
+									</li>';
+                                      
+                           }
+                    }
+                    else
+                        {
+
+                            if($pagina>1)
+                           {
+                               if($pagina>$paginacion)
+                               {
+                                   //echo'<li><a href="/'.$paginacion.'">«</a></li>';
+                                   //echo '<a class="next page-numbers" href="/index/'.$paginacion.'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-left"></i></a>';
+                                   
+                                    echo'<li>
+                                        <a href="/tienda/'.$paginacion.'/'.$categoria.'" class="page-numbers prev">
+                                            <span class="lnr lnr-arrow-left"></span>
+                                        </a>
+                                    </li>';
+                               }
+                        else
+                               {
+                                   //echo'<li><a href="/'.($pagina-1).'">«</a></li>';
+                                  // echo '<a class="next page-numbers" href="/index/'.($pagina-1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-left"></i></a>';
+                            
+                                       echo'<li>
+                                        <a href="/tienda/'.($pagina-1).'/'.$categoria.'" class="page-numbers prev">
+                                            <span class="lnr lnr-arrow-left"></span>
+                                        </a>
+                                    </li>';
+                               }
+
+                           }                
+
+                           for($i=1;$i<=ceil($numero_platillos[0]->numero_platillos/12);$i++)
+                           {
+                               if($i==$pagina)
+                               {
+                                   //echo'<li class="active"><a  href="/'.$i.'">'.$i.'</a></li>';
+                                  // echo '<span class="page-numbers current"><a  href="/index/'.$i.'/'.$categoria.'/'.$buscar.'">'.$i.'</a></span>';
+                                echo'   <li>
+                                       <a href="/tienda/'.$i.'/'.$categoria.'"> <span class="page-numbers current">'.$i.'</span> </a>
+                                  </li>';
+
+                               }
+                               else
+                               {
+                                   //echo'<li><a  href="/'.$i.'">'.$i.'</a></li>';
+                                    //echo '<a class="page-numbers" href="/index/'.$i.'/'.$categoria.'/'.$buscar.'">'.$i.'</a>';
+                                   echo' <li>
+                                        <a href="/tienda/'.$i.'/'.$categoria.'" class="page-numbers inactive">'
+                                            .$i.'
+                                        </a>
+                                    </li>';
+                               }
+
+                           }
+
+                           if($pagina<$paginacion)
+                           {
+                               //echo'<li><a href="/'.($pagina+1).'">»</a></li>';
+                                //echo '<a class="next page-numbers" href="/index/'.($pagina+1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-right"></i></a>';
+                               
+                                    echo '<li>
+										<a href=href="/tienda/'.($pagina+1).'/'.$categoria.'" class="page-numbers next">
+											<span class="lnr lnr-arrow-right"></span>
+										</a>
+									</li>';
+                                      
+                           }
+                        }
+                        
+                    }
+                      else
+                      {
+                           if($pagina>1)
+                           {
+                               if($pagina>$paginacion)
+                               {
+                                   //echo'<li><a href="/'.$paginacion.'">«</a></li>';
+                                   //echo '<a class="next page-numbers" href="/index/'.$paginacion.'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-left"></i></a>';
+                                   
+                                    echo'<li>
+                                        <a href="/tienda/'.$paginacion.'/'.$categoria.'/'.$buscar.'" class="page-numbers prev">
+                                            <span class="lnr lnr-arrow-left"></span>
+                                        </a>
+                                    </li>';
+                               }
+                        else
+                               {
+                                   //echo'<li><a href="/'.($pagina-1).'">«</a></li>';
+                                  // echo '<a class="next page-numbers" href="/index/'.($pagina-1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-left"></i></a>';
+                            
+                                       echo'<li>
+                                        <a href="/tienda/'.($pagina-1).'/'.$categoria.'/'.$buscar.'" class="page-numbers prev">
+                                            <span class="lnr lnr-arrow-left"></span>
+                                        </a>
+                                    </li>';
+                               }
+
+                           }                
+
+                           for($i=1;$i<=ceil($numero_platillos[0]->numero_platillos/12);$i++)
+                           {
+                               if($i==$pagina)
+                               {
+                                   //echo'<li class="active"><a  href="/'.$i.'">'.$i.'</a></li>';
+                                  // echo '<span class="page-numbers current"><a  href="/index/'.$i.'/'.$categoria.'/'.$buscar.'">'.$i.'</a></span>';
+                                echo'   <li>
+                                       <a href="/tienda/'.$i.'/'.$categoria.'/'.$buscar.'"> <span class="page-numbers current">'.$i.'</span> </a>
+                                  </li>';
+
+                               }
+                               else
+                               {
+                                   //echo'<li><a  href="/'.$i.'">'.$i.'</a></li>';
+                                    //echo '<a class="page-numbers" href="/index/'.$i.'/'.$categoria.'/'.$buscar.'">'.$i.'</a>';
+                                   echo' <li>
+                                        <a href="/tienda/'.$i.'/'.$categoria.'/'.$buscar.'" class="page-numbers inactive">'
+                                            .$i.'
+                                        </a>
+                                    </li>';
+                               }
+
+                           }
+
+                           if($pagina<$paginacion)
+                           {
+                               //echo'<li><a href="/'.($pagina+1).'">»</a></li>';
+                                //echo '<a class="next page-numbers" href="/index/'.($pagina+1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-right"></i></a>';
+                               
+                                    echo '<li>
+										<a href=href="/tienda/'.($pagina+1).'/'.$categoria.'/'.$buscar.'" class="page-numbers next">
+											<span class="lnr lnr-arrow-right"></span>
+										</a>
+									</li>';
+                                      
+                           }
+                      }
+                    
+                   ?>
+                            <!--<li>
+                                <span class="page-numbers current">1</span>
+                            </li>
+                            <li>
+                                <a href="#" class="page-numbers inactive">
+                                    2
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="page-numbers inactive">
+                                    3
+                                </a>
+                            </li>-->
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="sidebar">
+                        <!-- SEARCH -->
+                        <div class="widgets widget_search ">
+                            <input type="search" class="form-control " placeholder="Buscar platillo …" value="" id="buscar" name="buscar" onkeypress="pulsar(event)">
+                                
+                               
+                        </div>
+                        <!-- FILTER -->
+                        <!--<div class="widgets woocommerce widget_price_filter">
 									<div class="widget-title">
 										<h5>Filter by price</h5>
 									</div>
@@ -133,58 +328,83 @@
 										</div>
 									</form>
 								</div>-->
-								<!-- CATEGORIES -->
-								<div class="widgets widget_categories">
-									<div class="widget-title">
-										<h5>Categorias</h5>
-									</div>
-									<ul>
-                                        <li>
-											<a href="/tienda">Todas</a>
-										</li>
-                                        @foreach($categorias as $categoria)
-										<li>
-											<a href="/tienda/1/{{$categoria->id_categoria}}">{{$categoria->nombre_categoria}}</a>
-										</li>
-										@endforeach
-									</ul>
-								</div>
-								<!-- FEATURED PRODUCT -->
-								<div class="widgets woocommerce widget_featured_product">
-									<div class="widget-title">
-										<h5>Platillos nuevos</h5>
-									</div>
-                                    
-									<div class="featured-product">
-                                        @foreach($nuevos as $nuevo)
-										<div class="featured-product__item">
-											<a href="/info_platillo?platillo={{$nuevo->id_alimento}}" class="thumb">
-												<img src="{{$nuevo->fotografia_miniatura}}" alt="img_foto">
-											</a>
-											<div class="info">
-												<h6 class="woocommerce-loop-product__title">
-													<a href="/info_platillo?platillo={{$nuevo->id_alimento}}">{{$nuevo->nombre_alimento}}</a>
-												</h6>
-												<span class="price">
-													<span class="woocommerce-Price-amount amount">
-														<span class="woocommerce-Price-currencySymbol">$</span>{{$nuevo->precio}}
-													</span>
-												</span>
-											</div>
-										</div>
-                                        @endforeach
-									</div>
-								</div>
-								<!-- BANNER -->
-								<!--<div class="widgets widget_banner">
+                        <!-- CATEGORIES -->
+                        <div class="widgets widget_categories">
+                            <div class="widget-title">
+                                <h5>Categorias</h5>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="/tienda">Todas</a>
+                                </li>
+                                @foreach($categorias as $categoria)
+                                <li>
+                                    <a href="/tienda/1/{{$categoria->id_categoria}}">{{$categoria->nombre_categoria}}</a>
+                                </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        <!-- FEATURED PRODUCT -->
+                        <div class="widgets woocommerce widget_featured_product">
+                            <div class="widget-title">
+                                <h5>Platillos nuevos</h5>
+                            </div>
+
+                            <div class="featured-product">
+                                @foreach($nuevos as $nuevo)
+                                <div class="featured-product__item">
+                                    <a href="/info_platillo?platillo={{$nuevo->id_alimento}}" class="thumb">
+                                        <img src="{{$nuevo->fotografia_miniatura}}" alt="img_foto">
+                                    </a>
+                                    <div class="info">
+                                        <h6 class="woocommerce-loop-product__title">
+                                            <a href="/info_platillo?platillo={{$nuevo->id_alimento}}">{{$nuevo->nombre_alimento}}</a>
+                                        </h6>
+                                        <span class="price">
+                                            <span class="woocommerce-Price-amount amount">
+                                                <span class="woocommerce-Price-currencySymbol">$</span>{{$nuevo->precio}}
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <!-- BANNER -->
+                        <!--<div class="widgets widget_banner">
 									<a href="#">
 										<img src="images\widget-banner.jpg" alt="">
 									</a>
 								</div>-->
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+@section('scripts')
+<script type="text/javascript">
+    function pulsar(e) {
+        if (e.keyCode === 13 && !e.shiftKey) {
+            e.preventDefault();
+            var cod = document.getElementById("buscar").value;
+            //alert(cod);
+            var url = "/tienda/1/''/" + cod;
+            //alert(url);
+            location.href = url;
+            /*$.ajax({
+                method: "GET",
+                url: url,
+                dataType: "json",
+                success: function(data) {
+                  alert(data);
+
+                }
+            });*/
+
+        }
+    }
+
+</script>
+@stop
 @stop

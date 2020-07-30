@@ -2,19 +2,19 @@
 @section('contenido')
 		<main>
 			<!-- PAGE BREADCRUMB -->
-			<section class="page-breadcrumb">
+			<section class="page-breadcrumb" style="background-color:black;">
 				<div class="container">
 					<div class="row justify-content-between align-content-center">
 						<div class="col-md-auto">
-							<h3>Pagos</h3>
+							<h3 style="color: white;">Pagos</h3>
 						</div>
 						<div class="col-md-auto">
 							<ul class="au-breadcrumb">
 								<li>
-									<a href="/">Inicio</a>
+									<a href="/" style="color: white;">Inicio</a>
 								</li>
 								<li>
-									<a href="/tienda">Ir a comprar</a>
+									<a href="/tienda" style="color: white;">Ir a comprar</a>
 								</li>
 							</ul>
 						</div>

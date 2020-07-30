@@ -135,6 +135,11 @@
                     </li>
                 </ul>
             </li>
+            
+            <li class="menu-item">
+                <a href="/cerrar_sesion"> <span><i class="fas fa-clipboard-list fs-16"></i>Cerrar sesion</span>
+                </a>
+            </li>
             <!-- /Form Elements -->
             <!-- Charts -->
 
