@@ -54,6 +54,11 @@ Route::get('/Admin_restaurante', function () {
     return view('/Administrador/index');
 });
 
+/*FUNCIONES DEL CLIENTE*/
+
+//Route::get('/info_carrito/{id?}','CarritoController@mostrar_producto_carrito');
+Route::post('/info_carrito','CarritoController@mostrar_producto_carrito');
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 /*ADMINISTRADOR ALIMENTOS*/
 

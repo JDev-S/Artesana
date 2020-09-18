@@ -46,7 +46,12 @@
                                     <a href="/info_platillo?platillo={{$alimento->id_alimento}}" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
                                         <img src="{{$alimento->fotografia_miniatura}}" alt="">
                                     </a>
-                                    <a href="/info_platillo?platillo={{$alimento->id_alimento}}" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
+                                   <a href="javaScript:añadircarro({{$alimento->id_alimento}})" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
+                                    
+                                    <!--<a href="javaScript:prueba()" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>-->
+
+
+
                                 </div>
                                 <div class="info">
                                     <h5 class="woocommerce-loop-product__title">
@@ -136,7 +141,7 @@
                                 //echo '<a class="next page-numbers" href="/index/'.($pagina+1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-right"></i></a>';
                                
                                     echo '<li>
-										<a href=href="/tienda/'.($pagina+1).'/" class="page-numbers next">
+										<a href="/tienda/'.($pagina+1).'/" class="page-numbers next">
 											<span class="lnr lnr-arrow-right"></span>
 										</a>
 									</li>';
@@ -203,7 +208,7 @@
                                 //echo '<a class="next page-numbers" href="/index/'.($pagina+1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-right"></i></a>';
                                
                                     echo '<li>
-										<a href=href="/tienda/'.($pagina+1).'/'.$categoria.'" class="page-numbers next">
+										<a href="/tienda/'.($pagina+1).'/'.$categoria.'" class="page-numbers next">
 											<span class="lnr lnr-arrow-right"></span>
 										</a>
 									</li>';
@@ -271,7 +276,7 @@
                                 //echo '<a class="next page-numbers" href="/index/'.($pagina+1).'/'.$categoria.'/'.$buscar.'"><i class="ti ti-arrow-right"></i></a>';
                                
                                     echo '<li>
-										<a href=href="/tienda/'.($pagina+1).'/'.$categoria.'/'.$buscar.'" class="page-numbers next">
+										<a href="/tienda/'.($pagina+1).'/'.$categoria.'/'.$buscar.'" class="page-numbers next">
 											<span class="lnr lnr-arrow-right"></span>
 										</a>
 									</li>';
@@ -302,8 +307,8 @@
                         <!-- SEARCH -->
                         <div class="widgets widget_search ">
                             <input type="search" class="form-control " placeholder="Buscar platillo …" value="" id="buscar" name="buscar" onkeypress="pulsar(event)">
-                                
-                               
+
+
                         </div>
                         <!-- FILTER -->
                         <!--<div class="widgets woocommerce widget_price_filter">
@@ -370,12 +375,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <!-- BANNER -->
-                        <!--<div class="widgets widget_banner">
-									<a href="#">
-										<img src="images\widget-banner.jpg" alt="">
-									</a>
-								</div>-->
+                        
                     </div>
                 </div>
             </div>
@@ -388,23 +388,189 @@
         if (e.keyCode === 13 && !e.shiftKey) {
             e.preventDefault();
             var cod = document.getElementById("buscar").value;
-            //alert(cod);
             var url = "/tienda/1/''/" + cod;
-            //alert(url);
             location.href = url;
-            /*$.ajax({
-                method: "GET",
-                url: url,
-                dataType: "json",
-                success: function(data) {
-                  alert(data);
-
-                }
-            });*/
 
         }
     }
 
 </script>
+<script type="text/javascript">
+    let carrito = [];
+    //let total = 0;
+    
+
+    function añadircarro(id) {
+        //localStorage.clear();
+        console.log(id);
+        alert("entro")
+        var token = '{{csrf_token()}}';
+        var data = {
+            id: id,
+            _token: token
+        };
+        //var url = "info_carrito/" + 21;
+        //alert (url);
+         $.ajax({
+            type: "POST",
+            url: "/info_carrito",
+            data: data,
+            success: function(msg) {
+                alert("entro")
+                alert(msg);
+                var bandera_producto_repetido=0;
+                
+                var total_compu = document.getElementById('totalCompu');
+                var total_celular = document.getElementById('totalCel');
+                console.log(msg+"--------------------");
+                var datos = JSON.parse(msg);
+                
+                var foto = datos[0]['fotografia_miniatura'];
+                var nombre = datos[0]['nombre_alimento'];
+                var precio = datos[0]['precio'];
+                var id_alimento = datos[0]['id_alimento'];
+                var cantidad;
+                
+                 for (var i = 0; i < localStorage.length; i++) {
+                    var id = localStorage.key(i);
+                     if(id==id_alimento){
+                         alert("entroooooo");
+                         var producto = JSON.parse(localStorage.getItem(id));
+                         cantidad=producto.cantidad+1;
+                         producto.cantidad=cantidad;
+                         localStorage.setItem(id,JSON.stringify(producto));
+                         //localStorage.setItem(id, JSON.stringify(alimento));
+                         var contenido_item_compu = document.getElementById('item_compu_'+id);
+                         var contenido_item_celular = document.getElementById('item_celular_'+id);
+                         bandera_producto_repetido=1;
+                         break;
+                     }
+                 }
+                
+                var mensaje = "";
+                var total_aux=0;
+                if(bandera_producto_repetido==0){
+                    var contenido_compu = document.getElementById('carritoCompu');
+                    var contenido_celular = document.getElementById('carritoCel');
+                    cantidad=1;
+                    var alimento = new Object();
+                    
+                    alimento.fotografia = foto;
+                    alimento.nombre = nombre;
+                    alimento.precio = precio;
+                    alimento.id = id_alimento;
+                    alimento.cantidad="1";
+                    
+                    var cadena = JSON.stringify(alimento);
+                    localStorage.setItem(id_alimento, JSON.stringify(alimento));
+                    
+                     for (var i = 0; i < 2; i++) {
+                          var id_item="";
+                         if(i==0){
+                             id_item='item_compu_'+id_alimento;
+                         }
+                         else{
+                             id_item='item_celular_'+id_alimento;
+                         }
+                         mensaje = '<li class="woocommerce-mini-cart-item mini_cart_item clearfix" id="'+id_item+'">' +
+                            '<a href="javaScript:eliminar('+id_alimento+')" class="remove remove_from_cart_button" aria-label="Remove this item">' +
+                            '<span class="lnr lnr-cross-circle"></span>' +
+                            '</a>' +
+                            '<a href="#" class="image-holder">' +
+                            '<img src="' + foto + '" class="attachment-shop_thumbnail' + 'size-shop_thumbnail wp-post-image" alt="">' +
+                            '<span class="product-name">' + nombre + '</span>' +
+                            '</a>' +
+                            '<span class="quantity">' +
+                            '<span class="woocommerce-Price-amount amount">' +
+                            '<span class="woocommerce-Price-currencySymbol">$</span>' + precio +
+                            '</span>' +
+                            'x'+ cantidad +
+                            '</span>' +
+                            '</li>';
+                   
+                        //console.log(total);
+                         if(i==0){
+                             contenido_compu.innerHTML+=mensaje;
+                         }
+                         else{
+                             contenido_celular.innerHTML+=mensaje;
+                         }
+                     }   
+                }
+                else{
+                     mensaje = 
+                            '<a href="javaScript:eliminar('+id_alimento+')" class="remove remove_from_cart_button" aria-label="Remove this item">' +
+                            '<span class="lnr lnr-cross-circle"></span>' +
+                            '</a>' +
+                            '<a href="#" class="image-holder">' +
+                            '<img src="' + foto + '" class="attachment-shop_thumbnail' + 'size-shop_thumbnail wp-post-image" alt="">' +
+                            '<span class="product-name">' + nombre + '</span>' +
+                            '</a>' +
+                            '<span class="quantity">' +
+                            '<span class="woocommerce-Price-amount amount">' +
+                            '<span class="woocommerce-Price-currencySymbol">$</span>' + precio +
+                            '</span>' +
+                            'x'+cantidad +
+                            '</span>';
+                         
+                        contenido_item_compu=mensaje;
+                        contenido_item_celular=mensaje;
+                }
+                total_aux=cantidad*precio;
+                total_compu.innerHTML=total+total_aux;
+                total_celular.innerHTML=total+total_aux;
+                
+                console.log("Tamaño de la localstorage: "+localStorage.length);
+            },
+           // error: function(XMLHttpRequest, textStatus, errorThrown) {
+            //error: function(xhr, textStatus, errorMessage){
+              //  console.log("ERROR" + errorMessage + textStatus + xhr);
+                //console.log("hay un error"+ JSON.stringify(XMLHttpRequest));
+                //console.log("ERROR : "+textStatus);
+            //}
+            error:function( jqXHR, textStatus, errorThrown ) {
+
+          if (jqXHR.status === 0) {
+
+            alert('Not connect: Verify Network.');
+
+          } else if (jqXHR.status == 404) {
+
+            alert('Requested page not found [404]');
+
+          } else if (jqXHR.status == 500) {
+
+            alert('Internal Server Error [500].');
+
+          } else if (textStatus === 'parsererror') {
+
+            alert('Requested JSON parse failed.');
+
+          } else if (textStatus === 'timeout') {
+
+            alert('Time out error.');
+
+          } else if (textStatus === 'abort') {
+
+            alert('Ajax request aborted.');
+
+          } else {
+
+            alert('Uncaught Error: ' + jqXHR.responseText);
+
+          }
+
+        }
+        });
+        //carrito.push(id);
+
+        //console.log(carrito);
+    }
+
+</script>
 @stop
 @stop
+
+<!--
+
+-->
