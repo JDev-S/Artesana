@@ -395,6 +395,7 @@
     }
 
 </script>
+
 <script type="text/javascript">
     let carrito = [];
     //let total = 0;
@@ -422,6 +423,8 @@
                 
                 var total_compu = document.getElementById('totalCompu');
                 var total_celular = document.getElementById('totalCel');
+                var cantidad_compu = document.getElementById('cantidadCompu');
+                var cantidad_celular = document.getElementById('cantidadCel');
                 console.log(msg+"--------------------");
                 var datos = JSON.parse(msg);
                 
@@ -429,19 +432,24 @@
                 var nombre = datos[0]['nombre_alimento'];
                 var precio = datos[0]['precio'];
                 var id_alimento = datos[0]['id_alimento'];
-                var cantidad;
+                var cantidad_alimento=0;
+                var contenido_item_compu;
+                var contenido_item_celular;
                 
-                 for (var i = 0; i < localStorage.length; i++) {
+                for (var i = 0; i < localStorage.length; i++) {
                     var id = localStorage.key(i);
                      if(id==id_alimento){
                          alert("entroooooo");
                          var producto = JSON.parse(localStorage.getItem(id));
-                         cantidad=producto.cantidad+1;
+                         cantidad=parseInt(producto.cantidad,10)+1;
+                         cantidad_alimento=1;
+                         console.log("IMPRIMO LA CANTIDAD NUEVA :"+cantidad);
                          producto.cantidad=cantidad;
                          localStorage.setItem(id,JSON.stringify(producto));
+                         contenido_item_compu = document.getElementById('item_compu_'+id);
+                         contenido_item_celular = document.getElementById('item_celular_'+id);
+                         alert ('item_celular_'+id);
                          //localStorage.setItem(id, JSON.stringify(alimento));
-                         var contenido_item_compu = document.getElementById('item_compu_'+id);
-                         var contenido_item_celular = document.getElementById('item_celular_'+id);
                          bandera_producto_repetido=1;
                          break;
                      }
@@ -463,8 +471,11 @@
                     
                     var cadena = JSON.stringify(alimento);
                     localStorage.setItem(id_alimento, JSON.stringify(alimento));
+                     //total_aux=parseInt(localStorage.getItem('total'),10);
+                    
                     
                      for (var i = 0; i < 2; i++) {
+                         total_aux=0;
                           var id_item="";
                          if(i==0){
                              id_item='item_compu_'+id_alimento;
@@ -487,6 +498,9 @@
                             'x'+ cantidad +
                             '</span>' +
                             '</li>';
+                            total_aux=parseInt(precio,10)+total_aux;
+                            cantidad_alimento=1;
+                         //localStorage.setItem('total',total_aux+'');
                    
                         //console.log(total);
                          if(i==0){
@@ -498,6 +512,11 @@
                      }   
                 }
                 else{
+                    alert("ENTRO UN REPETIDO");
+                    console.log("imprimo_item_compu : "+contenido_item_compu);
+                    console.log("imprimo_item_celular :"+contenido_item_celular);
+                    contenido_item_compu.innerHTML="";
+                        contenido_item_celular.innerHTML="";
                      mensaje = 
                             '<a href="javaScript:eliminar('+id_alimento+')" class="remove remove_from_cart_button" aria-label="Remove this item">' +
                             '<span class="lnr lnr-cross-circle"></span>' +
@@ -512,13 +531,26 @@
                             '</span>' +
                             'x'+cantidad +
                             '</span>';
-                         
-                        contenido_item_compu=mensaje;
-                        contenido_item_celular=mensaje;
+                          alert("imprimo_item_mensaje_compu : "+mensaje);
+                    alert("imprimo_item_mensaje_celular :"+mensaje);
+                    //total_aux=parseInt(localStorage.getItem('total'),10);
+                    
+                        contenido_item_compu.innerHTML=mensaje;
+                        contenido_item_celular.innerHTML=mensaje;
+                    total_aux=parseInt(precio,10);
                 }
-                total_aux=cantidad*precio;
-                total_compu.innerHTML=total+total_aux;
-                total_celular.innerHTML=total+total_aux;
+                //total_aux=cantidad*precio+total_aux;
+                //console.log("Valor de total : "+localStorage.getItem('total'));
+                total_compu.innerHTML=parseInt(localStorage.getItem('total'),10)+total_aux;
+                total_celular.innerHTML=parseInt(localStorage.getItem('total'),10)+total_aux;
+                cantidad_celular.innerHTML=parseInt(localStorage.getItem('cantidad'),10)+cantidad_alimento;
+                cantidad_compu.innerHTML=parseInt(localStorage.getItem('cantidad'),10)+cantidad_alimento;
+               var total_final=parseInt(localStorage.getItem('total'),10)+total_aux;
+                var cantidad_total= parseInt(localStorage.getItem('cantidad'),10)+cantidad_alimento;
+                    localStorage.setItem('total',total_final+'');
+                    localStorage.setItem('cantidad',cantidad_total+'');
+                
+                
                 
                 console.log("Tamaño de la localstorage: "+localStorage.length);
             },

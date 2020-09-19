@@ -265,7 +265,7 @@
                                 <a href="/info_platillo?platillo={{$similar->id_alimento}}" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
                                     <img src="{{$similar->fotografia_miniatura}}" alt="img_platillo">
                                 </a>
-                                <a href="/info_platillo?platillo={{$similar->id_alimento}}" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir a carrito</a>
+                               
                             </div>
                             <div class="info">
                                 <h5 class="woocommerce-loop-product__title">

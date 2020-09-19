@@ -293,7 +293,7 @@
                 <div class="action">
                     <div class="notify">
                         <img src="\images\notify.png" alt="">
-                        <span class="notify-amount">0</span>
+                        <span class="notify-amount" id="cantidadCompu"></span>
 
                         <!-- WIDGET SHOPPING -->
                         <div id="woocommerce_widget_cart-2" class="widget woocommerce widget_shopping_cart">
@@ -317,17 +317,17 @@
                                     </li>-->
                                 </ul>
                                 <p class="woocommerce-mini-cart__total total">
-                                    <strong>Subtotal:</strong>
+                                    <strong>Total $:</strong>
                                     <span class="woocommerce-Price-amount amount">
                                         <span class="woocommerce-Price-currencySymbol" id="totalCompu"></span>
                                     </span>
                                 </p>
-                                <p class="woocommerce-mini-cart__total total">
+                                <!--<p class="woocommerce-mini-cart__total total">
                                     <strong>Total:</strong>
                                     <span class="woocommerce-Price-amount amount color-cdaa7c">
                                         <span class="woocommerce-Price-currencySymbol" id="totalCompu"></span>
                                     </span>
-                                </p>
+                                </p>-->
                                 <p class="woocommerce-mini-cart__buttons buttons">
                                     <a href="/carrito_compras" class="button wc-forward view-cart">Ver carrito</a>
                                     <a href="/pagar" class="button checkout wc-forward">Ir a pagar</a>
@@ -359,7 +359,7 @@
                         <div class="action">
                             <div class="notify">
                                 <img src="/images\notify.png" alt="">
-                                <span class="notify-amount">0</span>
+                                <span class="notify-amount" id="cantidadCel"></span>
 
                                 <!-- WIDGET SHOPPING -->
                                 <div class="widget woocommerce widget_shopping_cart">
@@ -383,17 +383,17 @@
 												</li>-->
                                         </ul>
                                         <p class="woocommerce-mini-cart__total total">
-                                            <strong>Subtotal:</strong>
+                                            <strong>Total: $</strong>
                                             <span class="woocommerce-Price-amount amount">
                                                 <span class="woocommerce-Price-currencySymbol" id="totalCel"></span>
                                             </span>
                                         </p>
-                                        <p class="woocommerce-mini-cart__total total">
+                                        <!--<p class="woocommerce-mini-cart__total total">
                                             <strong>Total:</strong>
                                             <span class="woocommerce-Price-amount amount color-cdaa7c">
                                                 <span class="woocommerce-Price-currencySymbol" id="totalCel"></span>
                                             </span>
-                                        </p>
+                                        </p>-->
                                         <p class="woocommerce-mini-cart__buttons buttons">
                                             <a href="#" class="button wc-forward view-cart">View cart</a>
                                             <a href="#" class="button checkout wc-forward">Checkout</a>
@@ -778,27 +778,28 @@
     <script type="text/javascript">
         var contenido_compu = document.getElementById('carritoCompu');
         var contenido_celular = document.getElementById('carritoCel');
-
         var total_compu = document.getElementById('totalCompu');
         var total_celular = document.getElementById('totalCel');
+        var cantidad_compu = document.getElementById('cantidadCompu');
+        var cantidad_celular = document.getElementById('cantidadCel');
         var mensaje2 = "";
         var total = 0;
+        var cantidad = 0;
         console.log("Tamaño de local storage " + localStorage.length);
         if (localStorage.length > 0) {
             for (var i = 0; i < localStorage.length; i++) {
-                
                 var id = localStorage.key(i);
-                if(id!='uuid'){
+                if (id != 'uuid' && id != 'total' && id != 'cantidad') {
                     var producto = localStorage.getItem(id);
                     console.log(id + " " + JSON.parse(producto).fotografia);
                     console.log(id + " " + JSON.parse(producto).nombre);
                     console.log(id + " " + JSON.parse(producto).precio);
                     console.log(id + " " + JSON.parse(producto).id);
-
                     console.log("mostrar los alimentos");
                     total = total + (JSON.parse(producto).precio * JSON.parse(producto).cantidad);
+                    alert("imprimir total " + total);
+                    cantidad = cantidad + parseInt(JSON.parse(producto).cantidad, 10);
                     var id_item = "";
-
                     for (var j = 0; j < 2; j++) {
                         var id_item = "";
                         if (j == 0) {
@@ -830,23 +831,27 @@
                         }
                     }
 
-
                     total_compu.innerHTML = total;
                     total_celular.innerHTML = total;
+                    cantidad_compu.innerHTML = cantidad;
+                    cantidad_celular.innerHTML = cantidad;
                     console.log("final de mostrar");
                 }
             }
         } else {
             contenido_compu.innerHTML = "";
             contenido_celular.innerHTML = "";
+            cantidad_compu.innerHTML = 0;
+            cantidad_celular.innerHTML = 0;
         }
+        console.log("IMPRIMO TOTAL EN WELCOME " + total);
+        console.log("IMPRIMO cantidad EN WELCOME " + cantidad);
+        alert(total);
+        alert("imprime la cantidad de " + cantidad);
+        localStorage.setItem('total', total + '');
+        localStorage.setItem('cantidad', cantidad + '');
 
     </script>
-
-
-
-
-
 
 
 
@@ -854,8 +859,13 @@
         function eliminar(id) {
             var contenido_compu = document.getElementById('carritoCompu');
             var contenido_celular = document.getElementById('carritoCel');
+            var total_compu = document.getElementById('totalCompu');
+            var total_celular = document.getElementById('totalCel');
+            var cantidad_compu = document.getElementById('cantidadCompu');
+            var cantidad_celular = document.getElementById('cantidadCel');
             var mensaje2 = "";
             var total = 0;
+            var cantidad = 0;
             localStorage.removeItem(id);
 
             contenido_compu.innerHTML = "";
@@ -866,41 +876,75 @@
             if (localStorage.length > 0) {
                 for (var i = 0; i < localStorage.length; i++) {
                     var id = localStorage.key(i);
-                    var producto = localStorage.getItem(id);
+                    if (id != 'uuid' && id != 'total' && id != 'cantidad') {
+                        var producto = localStorage.getItem(id);
+                        console.log(id + " " + JSON.parse(producto).fotografia);
+                        console.log(id + " " + JSON.parse(producto).nombre);
+                        console.log(id + " " + JSON.parse(producto).precio);
+                        console.log(id + " " + JSON.parse(producto).id);
+                        console.log("mostrar los alimentos");
+                        total = total + (JSON.parse(producto).precio * JSON.parse(producto).cantidad);
+                        alert("imprimir total " + total);
+                        cantidad = cantidad + parseInt(JSON.parse(producto).cantidad, 10);
+                        var id_item = "";
+                        for (var j = 0; j < 2; j++) {
+                            var id_item = "";
+                            if (j == 0) {
+                                id_item = 'item_compu_' + JSON.parse(producto).id;
+                            } else {
+                                id_item = 'item_celular_' + JSON.parse(producto).id;
+                            }
+                            mensaje2 = '<li class="woocommerce-mini-cart-item mini_cart_item clearfix" id="' + id_item + '">' +
+                                '<a href="javaScript:eliminar(' + id + ')" class="remove remove_from_cart_button" aria-label="Remove this item">' +
+                                '<span class="lnr lnr-cross-circle"></span>' +
+                                '</a>' +
+                                '<a href="#" class="image-holder">' +
+                                '<img src="' + JSON.parse(producto).fotografia + '" class="attachment-shop_thumbnail' + 'size-shop_thumbnail wp-post-image" alt="">' +
+                                '<span class="product-name">' + JSON.parse(producto).nombre + '</span>' +
+                                '</a>' +
+                                '<span class="quantity">' +
+                                '<span class="woocommerce-Price-amount amount">' +
+                                '<span class="woocommerce-Price-currencySymbol">$</span>' + JSON.parse(producto).precio +
+                                '</span>' +
+                                'x' + JSON.parse(producto).cantidad +
+                                '</span>' +
+                                '</li>';
 
-                    console.log(id + " " + JSON.parse(producto).fotografia);
-                    console.log(id + " " + JSON.parse(producto).nombre);
-                    console.log(id + " " + JSON.parse(producto).precio);
-                    console.log(id + " " + JSON.parse(producto).id_aliemnto);
+                            //console.log(total);
+                            if (j == 0) {
+                                contenido_compu.innerHTML += mensaje2;
+                            } else {
+                                contenido_celular.innerHTML += mensaje2;
+                            }
+                        }
 
-
-
-                    console.log("mostrar los alimentos");
-
-                    mensaje2 = mensaje2 = '<li class="woocommerce-mini-cart-item mini_cart_item clearfix">' +
-                        '<a href="javaScript:eliminar(' + id + ')" class="remove remove_from_cart_button" aria-label="Remove this item">' +
-                        '<span class="lnr lnr-cross-circle"></span>' +
-                        '</a>' +
-                        '<a href="#" class="image-holder">' +
-                        '<img src="' + JSON.parse(producto).fotografia + '" class="attachment-shop_thumbnail' + 'size-shop_thumbnail wp-post-image" alt="">' +
-                        '<span class="product-name">' + JSON.parse(producto).nombre + '</span>' +
-                        '</a>' +
-                        '<span class="quantity">' +
-                        '<span class="woocommerce-Price-amount amount">' +
-                        '<span class="woocommerce-Price-currencySymbol">$</span>' + JSON.parse(producto).precio +
-                        '</span>' +
-                        'x' + JSON.parse(producto).cantidad +
-                        '</span>' +
-                        '</li>';
-                    contenido_compu.innerHTML += mensaje2;
-                    contenido_celular.innerHTML += mensaje2;
-
-                    console.log("final de mostrar");
+                        total_compu.innerHTML = total;
+                        total_celular.innerHTML = total;
+                        cantidad_compu.innerHTML = cantidad;
+                        cantidad_celular.innerHTML = cantidad;
+                        console.log("final de mostrar");
+                    }
+                    else{
+                        contenido_compu.innerHTML = "";
+                contenido_celular.innerHTML = "";
+                cantidad_compu.innerHTML = 0;
+                cantidad_celular.innerHTML = 0;
+                        total_compu.innerHTML = 0;
+                        total_celular.innerHTML = 0;
+                    }
                 }
             } else {
                 contenido_compu.innerHTML = "";
                 contenido_celular.innerHTML = "";
+                cantidad_compu.innerHTML = 0;
+                cantidad_celular.innerHTML = 0;
             }
+            console.log("IMPRIMO TOTAL EN WELCOME " + total);
+            console.log("IMPRIMO cantidad EN WELCOME " + cantidad);
+            alert(total);
+            alert("imprime la cantidad de " + cantidad);
+            localStorage.setItem('total', total + '');
+            localStorage.setItem('cantidad', cantidad + '');
         }
 
     </script>
