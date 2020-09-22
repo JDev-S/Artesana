@@ -735,7 +735,7 @@
     </div>
 
     <!-- jQUERY -->
-    <script data-cfasync="false" src="..\..\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script>
+    <!--<script data-cfasync="false" src="..\..\cdn-cgi\scripts\5c5dd728\cloudflare-static\email-decode.min.js"></script>-->
     <script src="\js\jquery-3.3.1.min.js"></script>
 
     <!-- BOOTSTRAP JS -->
@@ -774,6 +774,7 @@
 
     <!-- MAIN JS -->
     <script src="\js\main.min.js"></script>
+    @yield('scripts')
 
     <script type="text/javascript">
         var contenido_compu = document.getElementById('carritoCompu');
@@ -851,6 +852,8 @@
         localStorage.setItem('total', total + '');
         localStorage.setItem('cantidad', cantidad + '');
 
+       
+
     </script>
 
 
@@ -870,7 +873,10 @@
 
             contenido_compu.innerHTML = "";
             contenido_celular.innerHTML = "";
-
+            cantidad_compu.innerHTML = 0;
+            cantidad_celular.innerHTML = 0;
+            total_compu.innerHTML = total;
+            total_celular.innerHTML = total;
 
             console.log("Tamaño de local storage " + localStorage.length);
             if (localStorage.length > 0) {
@@ -924,20 +930,15 @@
                         cantidad_celular.innerHTML = cantidad;
                         console.log("final de mostrar");
                     }
-                    else{
-                        contenido_compu.innerHTML = "";
-                contenido_celular.innerHTML = "";
-                cantidad_compu.innerHTML = 0;
-                cantidad_celular.innerHTML = 0;
-                        total_compu.innerHTML = 0;
-                        total_celular.innerHTML = 0;
-                    }
+
                 }
             } else {
                 contenido_compu.innerHTML = "";
                 contenido_celular.innerHTML = "";
                 cantidad_compu.innerHTML = 0;
                 cantidad_celular.innerHTML = 0;
+                total_compu.innerHTML = 0;
+                total_celular.innerHTML = 0;
             }
             console.log("IMPRIMO TOTAL EN WELCOME " + total);
             console.log("IMPRIMO cantidad EN WELCOME " + cantidad);
@@ -948,7 +949,7 @@
         }
 
     </script>
-    @yield('scripts')
+
 
 </body>
 

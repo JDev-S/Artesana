@@ -135,18 +135,18 @@
                         <div class="woocommerce-product-details__short-description">
                             <p>{{$platillos[0]->descripcion}}.</p>
                         </div>
-                        <form class="cart" method="post" enctype="multipart/form-data">
-                            <div class="quantity">
-                                <input type="number" class="input-text qty text" step="1" min="0" name="cart[5934c1ec0cd31e12bd9084d106bc2e32][qty]" value="1" title="Qty" size="4" id="input-quantity">
-                                <div class="icon">
-                                    <a href="#" class="number-button plus">+</a>
-                                    <a href="#" class="number-button minus">-</a>
-                                </div>
+
+                        <div class="quantity">
+                            <input type="number" step="1" min="1" max="10" title="Qty" size="4" id="input-quantity">
+                            <div class="icon">
+                                <a href="#" class="number-button plus">+</a>
+                                <a href="#" class="number-button minus">-</a>
                             </div>
-                            <?php
+                        </div>
+                        <?php
                             if($platillos[0]->disponible==1)
                             {
-                            echo '<button type="submit" name="add-to-cart" value="" class="single_add_to_cart_button button alt au-btn round has-bg au-btn--hover">Añadir al carrito</button>
+                            echo '<a class="single_add_to_cart_button button alt au-btn round has-bg au-btn--hover" href="javaScript:añadircarro('.$platillos[0]->id_alimento.')">Añadir al carrito</a>
                         </form>
                         <div class="product_meta">
                             <span class="sku_wrapper">Disponibilidad: <span class="sku">Hay disponible</span></span>
@@ -164,20 +164,20 @@
                         }
                         ?>
 
-                            <div class="social">
-                                <a href="#">
-                                    <i class="zmdi zmdi-twitter"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="zmdi zmdi-facebook-box"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="zmdi zmdi-linkedin"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="zmdi zmdi-instagram"></i>
-                                </a>
-                            </div>
+                        <div class="social">
+                            <a href="#">
+                                <i class="zmdi zmdi-twitter"></i>
+                            </a>
+                            <a href="#">
+                                <i class="zmdi zmdi-facebook-box"></i>
+                            </a>
+                            <a href="#">
+                                <i class="zmdi zmdi-linkedin"></i>
+                            </a>
+                            <a href="#">
+                                <i class="zmdi zmdi-instagram"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -265,7 +265,7 @@
                                 <a href="/info_platillo?platillo={{$similar->id_alimento}}" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
                                     <img src="{{$similar->fotografia_miniatura}}" alt="img_platillo">
                                 </a>
-                               
+
                             </div>
                             <div class="info">
                                 <h5 class="woocommerce-loop-product__title">
@@ -293,59 +293,274 @@
     </section>
 </main>
 @section('scripts')
-<script src="/js/jquery.js" type="text/javascript"></script>
+
 <script>
-// jQuery.noConflict();
- var posicion = 0;
- var imagenes = new Array();
- $(document).ready(function() {
-   //alert(jQuery('.texto').html());
-   var numeroImatges = 4;
-   if(numeroImatges<=3){
-   	$('.derecha_flecha').css('display','none');
-	$('.izquierda_flecha').css('display','none');
-   }
-   
- 
-	 
-	 $('.img_carrusel').live('click',function(){
-	 	$('#imatgeGran').attr('src',$(this).attr('src'));
-		return false;
-	 });
-	 
-	 $('.izquierda_flecha').live('click',function(){
-	 	if(posicion>0){
-			posicion = posicion-1;
-		}else{
-			posicion = numeroImatges-3;
-		}
-		$(".carrusel").animate({"left": -($('#imagen_'+posicion).position().left)}, 600);
-		return false;
-	 });
-	 
-	 $('.izquierda_flecha').hover(function(){
-	 	$(this).css('opacity','0.5');
-	 },function(){
-	 	$(this).css('opacity','1');
-	 });
-	 
-	 $('.derecha_flecha').hover(function(){
-	 	$(this).css('opacity','0.5');
-	 },function(){
-	 	$(this).css('opacity','1');
-	 });
-	 
-	 $('.derecha_flecha').live('click',function(){
-		if(numeroImatges>posicion+3){
-			posicion = posicion+1;
-		}else{
-			posicion = 0;
-		}
-		$(".carrusel").animate({"left": -($('#imagen_'+posicion).position().left)}, 600);
-		return false;
-	 });
-	 
- });
+    // jQuery.noConflict();
+    var posicion = 0;
+    var imagenes = new Array();
+    $(document).ready(function() {
+        //alert(jQuery('.texto').html());
+        var numeroImatges = 4;
+        if (numeroImatges <= 3) {
+            $('.derecha_flecha').css('display', 'none');
+            $('.izquierda_flecha').css('display', 'none');
+        }
+
+
+
+        $('.img_carrusel').live('click', function() {
+            $('#imatgeGran').attr('src', $(this).attr('src'));
+            return false;
+        });
+
+        $('.izquierda_flecha').live('click', function() {
+            if (posicion > 0) {
+                posicion = posicion - 1;
+            } else {
+                posicion = numeroImatges - 3;
+            }
+            $(".carrusel").animate({
+                "left": -($('#imagen_' + posicion).position().left)
+            }, 600);
+            return false;
+        });
+
+        $('.izquierda_flecha').hover(function() {
+            $(this).css('opacity', '0.5');
+        }, function() {
+            $(this).css('opacity', '1');
+        });
+
+        $('.derecha_flecha').hover(function() {
+            $(this).css('opacity', '0.5');
+        }, function() {
+            $(this).css('opacity', '1');
+        });
+
+        $('.derecha_flecha').live('click', function() {
+            if (numeroImatges > posicion + 3) {
+                posicion = posicion + 1;
+            } else {
+                posicion = 0;
+            }
+            $(".carrusel").animate({
+                "left": -($('#imagen_' + posicion).position().left)
+            }, 600);
+            return false;
+        });
+
+    });
+
+</script>
+
+<script type="text/javascript">
+    function añadircarro(id) {
+        //localStorage.clear();
+        var cant = parseInt(document.getElementById('input-quantity').value, 10);
+        alert("Imprime cantidad=" + cant + "------------- con el id " + id);
+        alert(typeof(cant));
+        if (cant > 0 && cant < 10) {
+            console.log(id);
+            alert("entro")
+            var token = '{{csrf_token()}}';
+            var data = {
+                id: id,
+                _token: token
+            };
+            //var url = "info_carrito/" + 21;
+            //alert (url);
+            $.ajax({
+                type: "POST",
+                url: "/info_carrito",
+                data: data,
+                success: function(msg) {
+                    alert("entro")
+                    alert(msg);
+                    var bandera_producto_repetido = 0;
+
+                    var total_compu = document.getElementById('totalCompu');
+                    var total_celular = document.getElementById('totalCel');
+                    var cantidad_compu = document.getElementById('cantidadCompu');
+                    var cantidad_celular = document.getElementById('cantidadCel');
+                    console.log(msg + "--------------------");
+                    var datos = JSON.parse(msg);
+                    alert("Imprimo el valor de datos :" + datos);
+                    var foto = datos[0]['fotografia_miniatura'];
+                    var nombre = datos[0]['nombre_alimento'];
+                    var precio = datos[0]['precio'];
+                    var id_alimento = datos[0]['id_alimento'];
+                    alert("Fotografias miniaturas : " + foto);
+                    alert("Nombre : " + nombre);
+                    alert("Precio :" + precio);
+                    alert("id_alimento :" + id_alimento);
+                    var cantidad_alimento = 0;
+                    var contenido_item_compu;
+                    var contenido_item_celular;
+
+                    for (var i = 0; i < localStorage.length; i++) {
+                        var id = localStorage.key(i);
+                        if (id == id_alimento) {
+                            alert("entroooooo");
+                            var producto = JSON.parse(localStorage.getItem(id));
+                            cantidad = parseInt(producto.cantidad, 10) + cant;
+                            cantidad_alimento = cant;
+                            console.log("IMPRIMO LA CANTIDAD NUEVA :" + cantidad);
+                            producto.cantidad = cantidad;
+                            localStorage.setItem(id, JSON.stringify(producto));
+                            contenido_item_compu = document.getElementById('item_compu_' + id);
+                            contenido_item_celular = document.getElementById('item_celular_' + id);
+                            alert('item_celular_' + id);
+                            //localStorage.setItem(id, JSON.stringify(alimento));
+                            bandera_producto_repetido = 1;
+                            break;
+                        }
+                    }
+
+                    var mensaje = "";
+                    var total_aux = 0;
+                    if (bandera_producto_repetido == 0) {
+                        var contenido_compu = document.getElementById('carritoCompu');
+                        var contenido_celular = document.getElementById('carritoCel');
+                        cantidad = cant;
+                        var alimento = new Object();
+
+                        alimento.fotografia = foto;
+                        alimento.nombre = nombre;
+                        alimento.precio = precio;
+                        alimento.id = id_alimento;
+                        alimento.cantidad = cant;
+
+                        var cadena = JSON.stringify(alimento);
+                        localStorage.setItem(id_alimento, JSON.stringify(alimento));
+                        //total_aux=parseInt(localStorage.getItem('total'),10);
+
+
+                        for (var i = 0; i < 2; i++) {
+                            total_aux = 0;
+                            var id_item = "";
+                            if (i == 0) {
+                                id_item = 'item_compu_' + id_alimento;
+                            } else {
+                                id_item = 'item_celular_' + id_alimento;
+                            }
+                            mensaje = '<li class="woocommerce-mini-cart-item mini_cart_item clearfix" id="' + id_item + '">' +
+                                '<a href="javaScript:eliminar(' + id_alimento + ')" class="remove remove_from_cart_button" aria-label="Remove this item">' +
+                                '<span class="lnr lnr-cross-circle"></span>' +
+                                '</a>' +
+                                '<a href="#" class="image-holder">' +
+                                '<img src="' + foto + '" class="attachment-shop_thumbnail' + 'size-shop_thumbnail wp-post-image" alt="">' +
+                                '<span class="product-name">' + nombre + '</span>' +
+                                '</a>' +
+                                '<span class="quantity">' +
+                                '<span class="woocommerce-Price-amount amount">' +
+                                '<span class="woocommerce-Price-currencySymbol">$</span>' + precio +
+                                '</span>' +
+                                'x' + cantidad +
+                                '</span>' +
+                                '</li>';
+                            total_aux = cant * (parseInt(precio, 10)) + total_aux;
+                            cantidad_alimento = cant;
+                            //localStorage.setItem('total',total_aux+'');
+
+                            //console.log(total);
+                            if (i == 0) {
+                                contenido_compu.innerHTML += mensaje;
+                            } else {
+                                contenido_celular.innerHTML += mensaje;
+                            }
+                        }
+                    } else {
+                        alert("ENTRO UN REPETIDO");
+                        console.log("imprimo_item_compu : " + contenido_item_compu);
+                        console.log("imprimo_item_celular :" + contenido_item_celular);
+                        contenido_item_compu.innerHTML = "";
+                        contenido_item_celular.innerHTML = "";
+                        mensaje =
+                            '<a href="javaScript:eliminar(' + id_alimento + ')" class="remove remove_from_cart_button" aria-label="Remove this item">' +
+                            '<span class="lnr lnr-cross-circle"></span>' +
+                            '</a>' +
+                            '<a href="#" class="image-holder">' +
+                            '<img src="' + foto + '" class="attachment-shop_thumbnail' + 'size-shop_thumbnail wp-post-image" alt="">' +
+                            '<span class="product-name">' + nombre + '</span>' +
+                            '</a>' +
+                            '<span class="quantity">' +
+                            '<span class="woocommerce-Price-amount amount">' +
+                            '<span class="woocommerce-Price-currencySymbol">$</span>' + precio +
+                            '</span>' +
+                            'x' + cantidad +
+                            '</span>';
+                        alert("imprimo_item_mensaje_compu : " + mensaje);
+                        alert("imprimo_item_mensaje_celular :" + mensaje);
+                        //total_aux=parseInt(localStorage.getItem('total'),10);
+
+                        contenido_item_compu.innerHTML = mensaje;
+                        contenido_item_celular.innerHTML = mensaje;
+                        total_aux = cant * parseInt(precio, 10);
+                    }
+                    //total_aux=cantidad*precio+total_aux;
+                    //console.log("Valor de total : "+localStorage.getItem('total'));
+                    total_compu.innerHTML = parseInt(localStorage.getItem('total'), 10) + total_aux;
+                    total_celular.innerHTML = parseInt(localStorage.getItem('total'), 10) + total_aux;
+                    cantidad_celular.innerHTML = parseInt(localStorage.getItem('cantidad'), 10) + cantidad_alimento;
+                    cantidad_compu.innerHTML = parseInt(localStorage.getItem('cantidad'), 10) + cantidad_alimento;
+                    var total_final = parseInt(localStorage.getItem('total'), 10) + total_aux;
+                    var cantidad_total = parseInt(localStorage.getItem('cantidad'), 10) + cantidad_alimento;
+                    localStorage.setItem('total', total_final + '');
+                    localStorage.setItem('cantidad', cantidad_total + '');
+
+
+
+                    console.log("Tamaño de la localstorage: " + localStorage.length);
+                },
+                // error: function(XMLHttpRequest, textStatus, errorThrown) {
+                //error: function(xhr, textStatus, errorMessage){
+                //  console.log("ERROR" + errorMessage + textStatus + xhr);
+                //console.log("hay un error"+ JSON.stringify(XMLHttpRequest));
+                //console.log("ERROR : "+textStatus);
+                //}
+                error: function(jqXHR, textStatus, errorThrown) {
+
+                    if (jqXHR.status === 0) {
+
+                        alert('Not connect: Verify Network.');
+
+                    } else if (jqXHR.status == 404) {
+
+                        alert('Requested page not found [404]');
+
+                    } else if (jqXHR.status == 500) {
+
+                        alert('Internal Server Error [500].');
+
+                    } else if (textStatus === 'parsererror') {
+
+                        alert('Requested JSON parse failed.');
+
+                    } else if (textStatus === 'timeout') {
+
+                        alert('Time out error.');
+
+                    } else if (textStatus === 'abort') {
+
+                        alert('Ajax request aborted.');
+
+                    } else {
+
+                        alert('Uncaught Error: ' + jqXHR.responseText);
+
+                    }
+
+                }
+            });
+            //carrito.push(id);
+
+            //console.log(carrito);
+        }
+        else{
+            alert("No pueden ser mas de 10 platillos");
+        }
+    }
+
 </script>
 @stop
 @stop
